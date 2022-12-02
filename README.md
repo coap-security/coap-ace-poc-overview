@@ -30,6 +30,8 @@ The demo application is executed across three major components:
 
   In the ACE framework, it implements the Client (C) role.
 
+[[_TOC_]]
+
 ## Components
 
 *This section describes roles and components of a generalized setup
@@ -151,7 +153,7 @@ while others may profit from further development on the ACE and CoAP-over-GATT s
 ### Maturities
 
 
-### Demo
+## Demo
 
 @@@
 
