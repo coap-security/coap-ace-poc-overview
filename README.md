@@ -1,16 +1,26 @@
 # CoAP/ACE PoC: Project overview
 
+*Preview version.
+While the general statements in this document are accurate to the best of the author's knowledge,
+statements pertaining to the particulars of the demo implementation
+are subject to change until software development is complete.*
+
 The CoAP/ACE Proof-of-Concept project
 demonstrates the use of CoAP[^1], the IETF's standard application protocol for the Internet of Things,
 and ACE[^2], the corresponding authorization framework.
-It transports CoAP over GATT (Bluetooth Low Energy),
+It transports CoAP over GATT[^3],
 allowing local access from off-the-shelf cell phones
 even when connectivity to the Internet is limited.
 
 [^1]: Constrained Application Protocol; [RFC7252] and related documents
-[RFC7252]: https://www.rfc-editor.org/rfc/rfc7252.html
 [^2]: Authentication and Authorization for Constrained Environments; [RFC9200] and related documents
+[^3]: CoAP over GATT is a [work-in-progress standards track specification].
+  It transports CoAP over GATT (Generic Attributes),
+  which is a widely implemented profile of Bluetooth Low Energy.
+
+[RFC7252]: https://www.rfc-editor.org/rfc/rfc7252.html
 [RFC9200]: https://www.rfc-editor.org/rfc/rfc9200.html
+[work-in-progress standards track specification]: https://datatracker.ietf.org/doc/id/draft-amsuess-core-coap-over-gatt-02.html
 
 The demo application is executed across three major components:
 
@@ -25,8 +35,8 @@ The demo application is executed across three major components:
   It is configured with symmetric keys for all devices.
 
 * The user's cell phone running a web application provides the user interface.
-  It communicates with the authorization server through the Internet (using WebSockets),
-  and with the device using Bluetooth Low Energy (using Web Bluetooth, available on modern Chrome-based browsers).
+  It communicates with the authorization server through the Internet (using HTTP),
+  and with the device using CoAP over Bluetooth Low Energy (using Web Bluetooth, available on modern Chrome-based browsers).
 
   In the ACE framework, it implements the Client (C) role.
 
@@ -37,7 +47,7 @@ The demo application is executed across three major components:
 *This section describes roles and components of a generalized setup
 of which the Proof-of-Concept implements a concrete simple example.*
 
-@@@ high-level diagram, split down to components (who stores what)
+<!-- @@@ high-level diagram, split down to components (who stores what) -->
 
 ### Resource Server (Device)
 
@@ -45,12 +55,18 @@ The role of the Resource Server (RS) is implemented on any device that provides 
 ACE is designed to allow this role to be played by highly constrained devices:
 with the concrete profile used here, there is no need even for asymmetric cryptography.
 
-The device houses several losely coupled components:
+The device houses several loosely coupled components:
 
-* The actual application:
-  reading sensor values, driving actuators or any control componet built on their combination.
+* The domain application:
+  reading sensor values, driving actuators or any control component built on their combination.
+* A CoAP application:
+  mapping the domain application to CoAP resources, possibly using standardized interfaces.
+  This mapping also expresses the minimum properties (typically a "scope") a client needs to provide credentials for for any operation.
 * A CoAP stack:
   mapping request coming through the network through the security layer to application requests.
+  For easy local communication with user devices,
+  this is implemented using the CoAP-over-GATT protocol.
+
   Note that the security layers used here are "on top" of CoAP.
   This allows applying them consistently on any transport of CoAP.
   For example, a device might offer the same interfaces over Bluetooth and over UDP when connected through a cellular network.
@@ -61,6 +77,7 @@ The device houses several losely coupled components:
 * A shared key with the AS.
   While the RS does not communicate directly with the AS,
   it receives tokens encrypted with this key.
+  This key is agreed on as part of the device's commissioning.
 * A pool of recently used tokens.
   These tokens are submitted to the RS by the Client,
   which obtains them from the AS.
@@ -75,15 +92,61 @@ The device houses several losely coupled components:
 [OSCORE]: https://www.rfc-editor.org/rfc/rfc8613
 [ACE OSCORE Profile]: https://www.rfc-editor.org/rfc/rfc9203
 
-  @@@ stack diagram next to other components
+  <!-- @@@ stack diagram next to other components -->
 
 ### Authorization Server
 
+The Authorization Server (AS) is a central entity that hands out tokens that authorize Clients to access RSes.
+It decouples the identities used by the clients from the authorizations understood by the RSes:
+Administrators can grant and revoke authorizations
+without directly involving the Client or RS,
+and the AS can combine the Client's identify with arbitrarily complex policy rules
+into the simple authorization statements which the RS can understand
+(thereby helping keep the RS simple).
+
+Its conceptual components are:
+
+* A list of shared keys with RSes.
+  RSes are labeled with an "audience" identifier.
+  The AS also knows enough of the RS's internals
+  to express authorizations pertaining to the RS as a "scope" which the RS can understand.
+* A means of recognizing authenticated clients,
+  along with their identifying information and other properties.
+* A policy governing which clients are allowed which operations on which RS.
+* A REST interface accessible to clients,
+  through which they obtain tokens.
+
+  This is generally recommended in the ACE OSCORE profile to be a CoAP interface.
+  For the application in this setup (even generalized from the demo),
+  this is realized as an HTTP interface.
+  That allows the above recognition of authenticated clients
+  to happen through a login inside the browser.
+* Optionally, a pool of recently issued tokens
+  to facilitate more efficient token re-validation or upgrades.
+
 ### Mobile application
+
+The mobile application takes the Client role in ACE,
+and can communicate (not necessarily simultaneously) with both the RS and the AS.
+It is a front end user interface.
+
+Its conceptual components are:
+
+* A user interface for the domain application.
+* A CoAP stack, which can
+  * communicate with the device through CoAP-over-GATT, and
+  * communicate with the AS through an interface offered by the AS.
+* A client identity usable with the AS.
+  Its authorization typically comes from the identity of its user,
+  possibly through some form of single-sign-on.
+* A pool of tokens usable with RSes.
+  This pool is populated ahead of time or on demand
+  by requesting a token from the AS for a particular RS.
+
 
 ## Implementation
 
-All components that were developed within this project are implemented in the Rust programming language.
+Most components that were developed within this project are implemented in the Rust programming language.
 This allows easy sharing of code between the mobile application and the embedded device,
 eases experimentation[^exp].
 Its rigorous type system lends itself to building high quality implementations
@@ -95,7 +158,7 @@ even in a prototyping project (see [Maturities]).
 
 The demo application for the nRF52-DK development kit
 is called [coap-ace-poc-firmware and hosted on GitLab],
-along with its documentation@@@.
+along with its documentation<!--@@@ -->.
 
 [coap-ace-poc-firmware and hosted on GitLab]: https://gitlab.com/oscore/coap-ace-poc-firmware
 
@@ -104,23 +167,93 @@ which can be programmed onto the development kit by means of drag-and-drop.
 These different images are pre-provisioned with keys shared with the Authorization Server,
 as well as distinct identities.
 
+The CoAP-over-GATT server is implemented based on the SoftDevice stack, which is provided by and proprietary to the chip's vendor, Nordic Semiconductors.
+The domain application, as well as the glue code between the SoftDevice and the CoAP stack
+are built on the [embassy framework] for embedded Rust.
+
+[embassy framework]: https://embassy.dev/
+
+The domain application consists of three components,
+each mapped to a single path,
+all of which are mapped to separate scopes:
+* reading a simulated temperature (`GET /temp`),
+* identifying the device by making its LEDs blink (`POST /identify`) and
+* setting the LEDs to be generally active (`POST /leds`).
+
+A significant difference between this demo and deployable devices is that
+it provides no runtime modified storage,
+i.e. no configuration except what is present at programming time,
+no firmware updates,
+and no security associations besides the AS.
+For timekeeping,
+it relies on the demo client to provide a current time stamp rather than on a high precision long-running clock.
+See [Time vs. Client-Nonce] for more details.
+
 ### Authorization Server
+
+The Authorization Server is implemented as a small Python script,
+available as [coap-ace-poc-as on GitLab].
+Originally planned as an adaption of RISE's [ACE-Java server],
+that turned out to be overly complex for the few tasks that remained in the demo
+when it was realized that a CoAP transport out of the browser could not carry over HTTP cookie based authentication data
+(see [C-AS communication]).
+
+A running version of the AS is provided on <https://as.coap.amsuess.com/>.
+Note that neither the user nor the client application need to be aware of that precise URI:
+It is encoded in the RS's responses to unauthorized access.
+
+The server provides only minimal functionality:
+
+* Offering a web front end for logging in as "junior" or "senior".
+  As there is no real authentication performed in the demo,
+  login (and logout) is merely a matter of clicking a button,
+  which sets a cookie.
+* Offering the `/token` end point of ACE,
+  providing tokens for the OSCORE profile.
+  
+  The token response contains secret key material to be shared between Client and RS
+  (twice: once in plain text for the Client, only protected by its HTTPS session with the AS,
+  and once encrypted with the RS's key).
+  The token also contains scope information,
+  which decouples the "junior" and "senior" roles into permissions of the application
+  (either may read temperature or identify the device,
+  but only the senior may set the LEDs),
+  and sets appropriate life times (5 minutes for the Junior, 24 hours for the Senior).
+
+Along with the server code, a list of preconfigured RSes and their keys is stored.
+
+[coap-ace-poc-as on GitLab]: https://gitlab.com/oscore/coap-ace-poc-as
+[ACE-Java server]: https://bitbucket.org/marco-tiloca-sics/ace-java.git
+
 
 ### Mobile application
 
-@@@ which does which
+The mobile application is run in a web browser;
+it is implemented in Rust using the [yew stack],
+and compiled into WebAssembly.
+Both its [source code] and the ready-to-use [built version] are hosted and documented<!-- @@@ --> on GitLab.
 
-### Implementation caveats
+The application initially just has a button for scanning for new devices,
+and shows a selection of eligible devices.
+This part of the user experience is shaped by the browser:
+It enforces that scanning only starts after a user interaction such as clicking a button,
+and the list is presented by the browser itself.
 
-@@@ fill from offer list (might still merge with Further and related work)
+With each available device, the user may start any of the interactions offered by the device.
+As all of them are limited to authorized users,
+these interactions initially fail,
+but provide the application with the address of the AS and a scope to request.
 
-## Learnings & notes for future development
+In addition,
+the client also provides the device with a local time stamp;
+[Time vs. Client-Nonce] has more details.
 
-### Choices and trade-offs
+[yew stack]: https://yew.rs/
+[source code]: https://gitlab.com/oscore/coap-ace-poc-webapp/
+[built version]: https://oscore.gitlab.io/coap-ace-poc-webapp/
 
-* Time vs cnonce (incl time sources and token lifetimes)
 
-## Further and related work
+## Learnings & future development
 
 ### Discovery and identification
 
@@ -136,30 +269,390 @@ Matching this with deployment realities will need further exploration.
 Concrete mechanisms are available for some aspects,
 while others may profit from further development on the ACE and CoAP-over-GATT side:
 
-* @@@
+* Resource Discovery (as specified in [RFC6690]) helps with the discovery of entry points on a device.
+  The RS would expose a dedicated discovery resource (`/.well-known/core`)
+  that lists entry points at a suitable granularity.for the application.
 
-### Commissioning (firmware updates)
-### C-AS integrations (OAuth, cookies, kerberos)
+  Authorization may be required already at the resource discovery step.
+  Note that if resource discovery is access controlled,
+  care has to be taken to alter nonexistent paths' behaviors to match the behavior of existing paths --
+  otherwise, the enumeration and characterization resources by an attacker is merely slowed down, not outright prohibited.
+
+* Existing applications built on CoAP sometimes have their own domain specific discovery mechanisms.
+
+  For example, CORECONF (NETCONF / YANG for constrained devices) involves a library discovery step built on (and in parallel to) RFC6690 based discovery.
+
+* All the above discovery mechanisms are only applicable once a device has been paired.
+
+  Expressing available CoAP services,
+  the applicable AS
+  or even the RS's identity
+  in such a way that the mobile application can limit the choices of available BLE devices
+  down to an application specific set
+  are material for further development of the CoAP-over-GATT specification.
+
+[RFC6690]: https://www.rfc-editor.org/rfc/rfc6690.html
+
+### Time vs. Client-Nonce
+
+The demo performs the highly insecure step of taking the current time
+from the client
+without any further verification.
+This simplification was chosen based on the assumption that realistic sensor or actuator devices
+will already have an established way of tracking time.
+Using an untrusted time allows an attacker to use a long expired token,
+and send a suitable time to trick the RS into accepting it.
+
+ACE offers different ways for the RS to assess the validity of a time-limited token:
+* The RS can synchronize its clock with the AS (or with any trusted reliable clock, if some global time scale is used).
+* The RS can send a client-nonce to the Client, which the Client then relays to the AS when requesting the token. The client-nonce is then encrypted in the token, confirming to the RS that the token was issued after the first use of that client-nonce.
+* The RS can communicate with the AS to explicitly ask for the validity of a given token.
+  This option is not further explored here,
+  because its benefits are not in requiring less communication,
+  but in providing additional services such as revocation without expiry.
+
+Picking between these is particularly hard when at least one of Client and RS have limited connectivity.
+Based on the limited device, we can classify:
+
+* Both the RS and the Client have good connectivity: 
+
+  Both synchronized clocks and client-nonce are viable options.
+  Ideally, participants would support both --
+  this allows retaining functionality even under degraded networking conditions.
+
+* The client has good connectivity, and the RS has none
+  (eg. because the RS only acts locally,
+  and would only ever need time for communication with local Clients):
+
+  Client-Nonce caters for this case.
+
+* The RS has good connectivity, and the client has none
+  (eg. when a remote RS in an area without cell phone coverage
+  is connected to a low-bandwidth sensor network):
+
+  The RS can synchronize clocks with the AS, or another time source.
+
+  It is tempting to place devices with GPS connectivity into this category,
+  given that GPS also provides good global time.
+  But the GPS time signal can be spoofed with reasonable effort,
+  rendering it unsuitable for deployments with high security requirements.
+
+* Neither the RS nor the Client have network connectivity at the time of their connection,
+  and the RS's network connectivity before then is insufficient to synchronize time with the AS.
+
+  This case can only be solved by creatively moving it into one of the previous categories.
+  Approaches worth exploring include:
+
+  * Using long-term stable clocks and long-lived tokens.
+
+    Off the shelf quartz oscillators offer accuracies in the order of magnitude of 20ppm.
+    When set up with a global time at commissioning time,
+    inaccuracies over even two decades in the field accumulate to mere hours of errors.
+
+    If this is known by the AS and considered in the token life time policy,
+    tokens can be issued that are sure to be accepted by the RS for the duration needed.
+
+    In particular for RSes in remote locations,
+    the Client would acquire the tokens while still connected to the Internet.
+    If these tokens are to be valid until the operator returns to locations with cell phone coverage,
+    tokens will need life times exceeding mere hours anyway.
+
+  * Distributing clock servers near the RS.
+
+    If the RS is part of a sensor network without (or with limited) connectivity to the AS,
+    it may make sense to deploy a trusted time server.
+    That time server can use the limited connectivity to the AS (or a more general trusted global time source),
+    and would be trusted by the RSes inside that sensor network.
+    This allows the RSes to use synchronized time.
+
+    The time server is security critical in the sense that a successful attack on it
+    allows the attacker to extend the validity of expired tokens.
+    Given that the time server is only trusted by local devices,
+    it may suffice to protect it just as well as the local RSes.
+
+    A suitable location for such a time server might be the communications uplink,
+    as that has the best information available to schedule its requests for accurate time.
+
+  * Distributing clock to the Client.
+
+    Advances in secure execution and trusted computing may enable a setup in which the Client also takes the role of a time server.
+    This requires a secure environment that is secure against tampering with its local time.
+    This environment is provisioned with key material to authenticate as a time server towards the RS.
+    The RS can then obtain a trustworthy time from the device the Client resides in
+    before validating the token.
+
+    Note that a similar approach can also be envisioned that shards a part of the AS out to the Client
+    (from where it could also respond to token requests containing client-nonces).
+    This is not recommended:
+    Not only is the fallout of a breach of the trusted environment far greater
+    (the attacker could issue tokens for any scope for the RS),
+    but the requirements on the execution environment are not less than to a trusted clock server:
+    It needs to be secure against tampering with local time --
+    otherwise, the AS could be kept suspended in the trusted environment
+    and would issue tokens for client-nonces created at an arbitrary later time.
+
+Adding client-nonce support to Client, RS and AS
+is a relatively mechanical task.
+The main challenge in adjusting the PoC to deployable parameters
+is deciding which token life times are acceptable.
+To some extent, this is a trade-off between security and reliability,
+which must be taken on a case-by-case base.
+
+### Commissioning
+
+The demo largely sidesteps the issue of commissioning:
+devices are programmed already with the identities as they are known by the AS.
+This is a practical solution for a demo
+in which images are prepared and AS is operated independently.
+
+While the ACE framework itself is not concerned with the setup of keys between the RS and the AS,
+[RFC8995 ("BRSKI")] and related documents describe how
+an initial identity is placed on the device by the manufacturer,
+and the device establishes a trust relation with its operating organization through a voucher issued by the (or on behalf of the) manufacturer.
+
+To the author's knowledge, there is no fully specified path between that initial identity
+and an RS-AS association.
+Whether that is actually needed (and thus warrants further investigation) depends
+to a large part
+on the deployment models planned by the device manufacturer and its operators.
+
+[RFC8995 ("BRSKI")]: https://www.rfc-editor.org/rfc/rfc8995.html
+
+Related to the topic of commissioning is the topic of firmware updates,
+because both are managed in collaboration between the operator and the manufacturer.
+The [SUIT architecture (RFC9019)] and its follow-up documents
+describe how firmware updates can be managed securely;
+the CoAP-over-GATT transport can be used to transport firmware data.
+
+[SUIT architecture (RFC9019)]: https://www.rfc-editor.org/rfc/rfc9019.html
+
+
+### C-AS communication
+
+The setup assembled for this PoC realizes the communication between Client and AS through HTTP.
+This is, in the context of the ACE OSCORE profile, an exotic step --
+the general recommendation is to go through CoAP.
+
+A requirement of the Client-AS communication in ACE is that the AS have a pre-established secure connection with the Client.
+As the Client is a web browser, it is bound by browser security policies such as the Same Origin Policy and CORS.
+Consequently, if the Client-AS communication were conducted using CoAP-over-WebSockets
+(a typical means of transporting CoAP in a browser),
+the browser session's credentials (typically cookies)
+would only be sent to the WebSocket server if the application and the AS were hosted on the same Origin.
+
+Using an HTTP transport is suitable for the PoC itself,
+but is also expected to be viable for practical deployments.
+In that case, the AS would interact with an existing authentication server (Single-Sign-On mechanisms such as OpenID)
+at log-in time.
+
+Viable alternatives to this setup are:
+
+* If the authentication management system also deals in authorization,
+  and if it is sufficiently extensible,
+  an existing service can be extended to also play the role of the AS.
+
+  This would not change the Client-AS communication
+  (as it would still utilize HTTP),
+  but would reduce the level of authentication indirections.
+
+  In particular, this is likely a suitable approach for OAuth based systems.
+
+* If the authorization services works in a more offline fashion
+  (for example, if mobile devices are explicitly commissioned),
+  each individual device can obtain a token response for accessing the AS as an RS,
+  applying the same ACE OSCORE profile already used between client and the devices.
+
+  While offering much flexibility
+  (especially as it enables communication through any CoAP capable channel),
+  such a scheme requires good protection of the token,
+  because that token response not only allows its bearer to access the AS with the authorization set of the Client,
+  but also to impersonate the AS toward the Client.
+
+* If the mobile application is realized as an app rather than as a web app,
+  communication with the AS can use CoAP directly
+  (or CoAP-over-WebSockets, in case excessive firewalling needs to be accounted for).
+  That communication may then be secured with TLS,
+  or with a token for accessing the AS as an RS (see above).
+
+* CoAP-over-WebSockets could be used from the browser
+  if bearer tokens available to the application were be presented to the AS
+  by extending the token end point's URI,
+  or by sending custom signaling messages.
+  The author is not aware of any specified mechanism for either of these,
+  but it may be a viable route for exploration
+  if additional CoAP-over-WebSockets features were needed in this context.
+
+Whether these should be explored to a large extent depends on the authentication mechanisms available to the end users.
+
 ### Proximity
 
-### Various implementation caveats
+CoAP-over-GATT makes no claims on whether Client and RS are in proximity of each other.
 
-* Randomness:
-  <del>The devices lack a good source of entropy.</del> @@@ will use softdevice's randomness
+Adding proximity as an authenticated claim involves both a technical and an authorization model component.
 
-* Various quality-of-implementation things (overwriting the same token rather than oldest)
-  @@@
+The technical aspect of proximity (or ranging) may be covered by Bluetooth, NFC and UWB (eg. Secure Ranging of IEEE 802.15.4z).
+Attacks are known against the former two in earlier versions
+(which admittedly also did not make serious claims to that effect).
+Bluetooth and UWB bases approaches offer directionality indication in addition to proximity in some implementations;
+these can offer practical benefits in addition to the security afforded by the proximity proofs.
+Implementations may support a mixture of these technologies;
+the Car Connectivity Consoritum's [white paper] outlines how all three are combined.
+
+[white paper]: https://carconnectivity.org/press-release/car-connectivity-consortium-publishes-white-paper-on-the-future-of-vehicle-access-with-digital-key/
+
+Independently of which technology turns out most practical,
+proximity will need to be integrated in ACE.
+If requiring proximity only once for interactions stretched over a certain time,
+it can suffice to verify proximity when the token is exchanged.
+With the AS being the authority on whether proximity is needed in an operation,
+that requirement needs to be expressed toward the Client and the RS together with the token.
+Any future specification defining this indication
+may also provide concrete guidance on how to combine key material at different layers.
+<!-- STS takes AES keys which might be a by-product of token exchange so we can range later, cf https://rfmw.em.keysight.com/wireless/helpfiles/n7610/Content/Main/Concept%20802.15.4%20UWB.htm and https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7571033/pdf/sensors-20-05422.pdf but not sure whether that's not part of their negotiations anyway -->
+
+Note that, to the author's knowledge,
+the threat model of the underlying technologies' assurances is that
+an attacker who is neither in control of the RS nor the Client
+misleads them to assume their proximity.
+They do not protect against circumvention of a token's proximity requirement
+if either party is controlled by the attacker.
+(For example, an attacker obtaining full control of a digital key
+might still use it to open the corresponding lock with directional radio).
+Addressing such scenarios might be possible
+with an even higher degree of involvement of the AS
+(eg. denoting the maximum required processing time of a peer together with the token),
+but the effort to explore that avenue would only be warranted when backed by a threat model that requires the pertinent assurances.
 
 ### Maturities
+
+*Note that this section in particular will need confirmation at completion of the software development.*
+
+Components of the PoC come in different levels of maturity:
+
+* Aiming for long-term use:
+  Resource Server (the ACE part of the device, managing the AS security association and the tokens) and OSCORE integration.
+
+  While currently not suitable for production deployments,
+  these were built and documented with portability and development into production ready components in mind.
+
+* Evolvable towards long-term use:
+  CoAP-over-GATT implementations (on device and browser).
+
+  These components might see later re-use,
+  but are both built on comparatively volatile frameworks
+  (with embassy not having reached stable versions yet,
+  and the web-sys components underpinning the BLE communication explicitly marked as unstable).
+
+* Web application, Authorization Server:
+
+  These are largely demo specific.
+  Going forward,
+  they might still serve as examples
+  or in future iterations of the demo,
+  but are not expected to ever evolve into production ready components.
+
+#### Towards critical systems
+
+One aspect worth addressing in the context of production readiness is use in critical systems:
+Efforts are underway to define a subset of the Rust language
+for which a qualified tool chain is available --
+the [ferrocene] project.
+The Resource Server does not currently use that subset,
+but to the best of the author's knowledge contains no design decisions that would rule out refactoring into that subset on the long run.
+
+[ferrocene]: https://ferrous-systems.com/ferrocene/
+
+#### Various implementation caveats
+
+At some places, liberties afforded by the ACE or CoAP specifications have been used.
+Both in implementing CoAP-over-GATT and ACE token processing,
+the simple paths have been chosen over the efficient ones.
+For example,
+token upgrade is not implemented,
+and new tokens replacing existing ones do not necessarily evict them from the token pool.
+
+Which of these it will make sense to replace with more elaborate versions,
+and which are places to keep complexity low for good,
+is ultimately best decided when concrete application and deployment requirements are available.
+
+### Non-issues
+
+The original planning for this project included caveats for two aspects that turned out to be resolved easily:
+
+* AS discovery:
+  The AS responsible for the RS can be discovered easily by the Client
+  by processing the RS's error response on unauthorized access.
+
+  This also means that the application can trivially access devices in different domains;
+  conversely, this illustrates the need for adequate discovery when that is not desired.
+
+* Permission levels:
+  <!-- used to be heading "token expression" if I'd ever get asked where that item went -->
+  The original planning envisioned that privilege levels would be hard-coded in the devices.
+  It turned out that the conversion between role and actions in the device application model
+  could be performed in the AS easily.
+
+  The [AIF (RFC9237)] format used for scopes can be used in its REST-specific form (as used in the demo),
+  or replaced with an application specific form in case the former is insufficient.
+
+[AIF (RFC9237)]: https://www.rfc-editor.org/rfc/rfc9237.html
+
+* Entropy:
+  It was expected that devices will need their random number generator seeded by the mobile application
+  (in a similar way as the time still is).
+  As the SoftDevice also exposes the nRF chips' random number generators,
+  a good source entropy is already available.
 
 
 ## Demo
 
-@@@
-
 See [the firmware's README file](../coap-ace-poc-firmware/README.md)
 for a description of how to install the demo,
 and how to connect from the browser.
+<!-- @@@ move into flashing? --> It is recommended to attach name labels corresponding to the uploaded images to the boards.
 
 Documentation on how to build and configure the individual components
-is provided with the respective components.
+is provided with the respective components;
+for performing the demo, this should not be necessary.
+
+The recommended workflow for the demo is as follows,
+either performed by the presenter or given as hands-on demo for the participants,
+with at least two phones, and any number of nRF52-DK devices with distinct firmware images[^limits]:
+
+* Turn on the battery powered devices.
+* Direct the phones to <https://oscore.gitlab.io/coap-ace-poc-webapp/> with a Chrome based browser,
+  and scan for CoAP devices.
+  Pick one with a label near you.
+* The device shows up in the device list.
+  Attempt to read its temperature --
+  this will fail, but prompt you to log in to elevate your privileges.
+* Pick distinct roles for different phones connected to a device.
+  Read the temperature again:
+  This will report some value.
+
+  In parallel, a token will show on the tokens list.
+* Attempt to change the device's LED state.
+  This will succeed only for users who picked "Senior" at the login dialog.
+* Turn off cell phone's uplink (WiFi and mobile data),
+  and wait for five minutes.
+
+  (In a presentation, this is a good slot to tell about what is going on behind the scenes).
+
+* Attempt to read the temperature again,
+  or to make the device blink by means of the "identify" feature.
+
+  This will succeed for the "seniors"
+  (whose tokens are longer-lived),
+  while failing for the "juniors".
+
+  Turning the devices off and back on will not change that
+  (although it will require a re-scan and a reconnect to the device,
+  and a new token exchange when the action is performed).
+
+* Turn on the phone's uplink again.
+  Juniors can now perform their operations again,
+  and will see an updated token in their list of tokens.
+
+[^limits]: Only a configured number, defaulting to 4, of cell phones can be connected to a device at any given time.
+  That's plenty for real world use cases,
+  but during the demo, there should be enough boards over participants that no board gets more than 4 simultaneous users.
