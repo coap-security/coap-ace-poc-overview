@@ -15,8 +15,8 @@ even when connectivity to the Internet is limited.
 [^1]: Constrained Application Protocol; [RFC7252] and related documents
 [^2]: Authentication and Authorization for Constrained Environments; [RFC9200] and related documents
 [^3]: CoAP over GATT is a [work-in-progress standards track specification].
-  It transports CoAP over GATT (Generic Attributes),
-  which is a widely implemented profile of Bluetooth Low Energy.
+      It transports CoAP over GATT (Generic Attributes),
+      which is a widely implemented profile of Bluetooth Low Energy.
 
 [RFC7252]: https://www.rfc-editor.org/rfc/rfc7252.html
 [RFC9200]: https://www.rfc-editor.org/rfc/rfc9200.html
@@ -121,6 +121,7 @@ Its conceptual components are:
   this is realized as an HTTP interface.
   That allows the above recognition of authenticated clients
   to happen through a login inside the browser.
+  (See [Client-AS communication] for further discussion).
 * Optionally, a pool of recently issued tokens
   to facilitate more efficient token re-validation or upgrades.
 
@@ -133,7 +134,7 @@ It is a front end user interface.
 Its conceptual components are:
 
 * A user interface for the domain application.
-* A CoAP stack, which can
+* A REST (CoAP, HTTP) stack, which can
   * communicate with the device through CoAP-over-GATT, and
   * communicate with the AS through an interface offered by the AS.
 * A client identity usable with the AS.
@@ -170,12 +171,14 @@ as well as distinct identities.
 The CoAP-over-GATT server is implemented based on the SoftDevice stack, which is provided by and proprietary to the chip's vendor, Nordic Semiconductors.
 The domain application, as well as the glue code between the SoftDevice and the CoAP stack
 are built on the [embassy framework] for embedded Rust.
+The OSCORE layer is provided through Rust bindings to the libOSCORE library.
 
 [embassy framework]: https://embassy.dev/
 
 The domain application consists of three components,
 each mapped to a single path,
 all of which are mapped to separate scopes:
+
 * reading a simulated temperature (`GET /temp`),
 * identifying the device by making its LEDs blink (`POST /identify`) and
 * setting the LEDs to be generally active (`POST /leds`).
@@ -196,7 +199,7 @@ available as [coap-ace-poc-as on GitLab].
 Originally planned as an adaption of RISE's [ACE-Java server],
 that turned out to be overly complex for the few tasks that remained in the demo
 when it was realized that a CoAP transport out of the browser could not carry over HTTP cookie based authentication data
-(see [C-AS communication]).
+(see [Client-AS communication]).
 
 A running version of the AS is provided on <https://as.coap.amsuess.com/>.
 Note that neither the user nor the client application need to be aware of that precise URI:
@@ -265,7 +268,8 @@ The demo's discovery model is built on two assumptions:
   and obtain proof of the device being one under the AS's control when a connection is established.
 * There is only one "application" around, and it is known by all involved what it is.
 
-Matching this with deployment realities will need further exploration.
+Matching this with deployment realities will need further exploration,
+based on anticipated usage patterns.
 Concrete mechanisms are available for some aspects,
 while others may profit from further development on the ACE and CoAP-over-GATT side:
 
@@ -282,7 +286,7 @@ while others may profit from further development on the ACE and CoAP-over-GATT s
 
   For example, CORECONF (NETCONF / YANG for constrained devices) involves a library discovery step built on (and in parallel to) RFC6690 based discovery.
 
-* All the above discovery mechanisms are only applicable once a device has been paired.
+* All the above discovery mechanisms are only applicable once a device has been connected.
 
   Expressing available CoAP services,
   the applicable AS
@@ -304,6 +308,7 @@ Using an untrusted time allows an attacker to use a long expired token,
 and send a suitable time to trick the RS into accepting it.
 
 ACE offers different ways for the RS to assess the validity of a time-limited token:
+
 * The RS can synchronize its clock with the AS (or with any trusted reliable clock, if some global time scale is used).
 * The RS can send a client-nonce to the Client, which the Client then relays to the AS when requesting the token. The client-nonce is then encrypted in the token, confirming to the RS that the token was issued after the first use of that client-nonce.
 * The RS can communicate with the AS to explicitly ask for the validity of a given token.
@@ -312,84 +317,98 @@ ACE offers different ways for the RS to assess the validity of a time-limited to
   but in providing additional services such as revocation without expiry.
 
 Picking between these is particularly hard when at least one of Client and RS have limited connectivity.
-Based on the limited device, we can classify:
+We can classify:
 
-* Both the RS and the Client have good connectivity: 
+1. Both the RS and the Client have good connectivity: 
 
-  Both synchronized clocks and client-nonce are viable options.
-  Ideally, participants would support both --
-  this allows retaining functionality even under degraded networking conditions.
+   Both synchronized clocks and client-nonce are viable options.
+   Ideally, participants would support both --
+   this allows retaining functionality even under degraded networking conditions.
 
-* The client has good connectivity, and the RS has none
-  (eg. because the RS only acts locally,
-  and would only ever need time for communication with local Clients):
+2. The client has good connectivity, and the RS has none
+   (eg. because the RS only acts locally,
+   and would only ever need time for communication with local Clients):
 
-  Client-Nonce caters for this case.
+   Client-nonces are useful in this case.
 
-* The RS has good connectivity, and the client has none
-  (eg. when a remote RS in an area without cell phone coverage
-  is connected to a low-bandwidth sensor network):
+3. The RS has good connectivity, and the client has none
+   (eg. when a remote RS in an area without cell phone coverage
+   is connected to a low-bandwidth sensor network):
 
-  The RS can synchronize clocks with the AS, or another time source.
+   The RS can synchronize clocks with the AS, or another time source.
 
-  It is tempting to place devices with GPS connectivity into this category,
-  given that GPS also provides good global time.
-  But the GPS time signal can be spoofed with reasonable effort,
-  rendering it unsuitable for deployments with high security requirements.
+   The client needs to obtain suitable tokens in advance,
+   while it is still connected to the AS;
+   this rules out client-nonces.
 
-* Neither the RS nor the Client have network connectivity at the time of their connection,
-  and the RS's network connectivity before then is insufficient to synchronize time with the AS.
+   It is tempting to place devices with GPS connectivity into this category,
+   given that GPS also provides good global time.
+   But the GPS time signal can be spoofed with reasonable effort,
+   rendering it unsuitable for deployments with high security requirements.
 
-  This case can only be solved by creatively moving it into one of the previous categories.
-  Approaches worth exploring include:
+4. Neither the RS nor the Client have network connectivity at the time of their connection,
+   and the RS's network connectivity before then is insufficient to synchronize time with the AS.
 
-  * Using long-term stable clocks and long-lived tokens.
+   This case can only be solved by creatively moving it into one of the previous categories.
+   Approaches worth exploring include:
 
-    Off the shelf quartz oscillators offer accuracies in the order of magnitude of 20ppm.
-    When set up with a global time at commissioning time,
-    inaccuracies over even two decades in the field accumulate to mere hours of errors.
+   1. Using long-term stable clocks and long-lived tokens.
 
-    If this is known by the AS and considered in the token life time policy,
-    tokens can be issued that are sure to be accepted by the RS for the duration needed.
+      Off the shelf quartz oscillators offer accuracies in the order of magnitude of 20ppm.
+      When set up with a global time at commissioning time,
+      inaccuracies over even two decades in the field accumulate to mere hours of errors.
 
-    In particular for RSes in remote locations,
-    the Client would acquire the tokens while still connected to the Internet.
-    If these tokens are to be valid until the operator returns to locations with cell phone coverage,
-    tokens will need life times exceeding mere hours anyway.
+      If this is known by the AS and considered in the token life time policy,
+      tokens can be issued that are sure to be accepted by the RS for the duration needed.
 
-  * Distributing clock servers near the RS.
+      In particular for RSes in remote locations,
+      the Client would acquire the tokens while still connected to the Internet.
+      If these tokens are to be valid until the operator returns to locations with cell phone coverage,
+      tokens will need life times exceeding mere hours anyway.
 
-    If the RS is part of a sensor network without (or with limited) connectivity to the AS,
-    it may make sense to deploy a trusted time server.
-    That time server can use the limited connectivity to the AS (or a more general trusted global time source),
-    and would be trusted by the RSes inside that sensor network.
-    This allows the RSes to use synchronized time.
+   2. Distributing clock servers near the RS.
 
-    The time server is security critical in the sense that a successful attack on it
-    allows the attacker to extend the validity of expired tokens.
-    Given that the time server is only trusted by local devices,
-    it may suffice to protect it just as well as the local RSes.
+      If the RS is part of a sensor network without (or with limited) connectivity to the AS,
+      it may make sense to deploy a trusted time server.
+      That time server can use the limited connectivity to the AS (or a more general trusted global time source),
+      and would be trusted by the RSes inside that sensor network.
+      This allows the RSes to use synchronized time.
 
-    A suitable location for such a time server might be the communications uplink,
-    as that has the best information available to schedule its requests for accurate time.
+      The time server is security critical in the sense that a successful attack on it
+      allows the attacker to extend the validity of expired tokens.
+      Given that the time server is only trusted by local devices,
+      it may suffice to protect it just as well as the local RSes.
 
-  * Distributing clock to the Client.
+      A suitable location for such a time server might be the communications uplink,
+      as that has the best information available to schedule its requests for accurate time.
 
-    Advances in secure execution and trusted computing may enable a setup in which the Client also takes the role of a time server.
-    This requires a secure environment that is secure against tampering with its local time.
-    This environment is provisioned with key material to authenticate as a time server towards the RS.
-    The RS can then obtain a trustworthy time from the device the Client resides in
-    before validating the token.
+   3. Distributing clock to the Client.
 
-    Note that a similar approach can also be envisioned that shards a part of the AS out to the Client
-    (from where it could also respond to token requests containing client-nonces).
-    This is not recommended:
-    Not only is the fallout of a breach of the trusted environment far greater
-    (the attacker could issue tokens for any scope for the RS),
-    but the requirements on the execution environment are not less than to a trusted clock server:
-    It needs to be secure against tampering with local time --
-    otherwise, the AS could be kept suspended in the trusted environment
-    and would issue tokens for client-nonces created at an arbitrary later time.
+      Advances in secure execution and trusted computing may enable a setup in which the Client also takes the role of a time server.
+      This requires a secure environment that is secure against tampering with its local time.
+      This environment is provisioned with key material to authenticate as a time server towards the RS.
+      The RS can then obtain a trustworthy time from the device the Client resides in
+      before validating the token.
+
+      Note that a similar approach can also be envisioned that shards a part of the AS out to the Client
+      (from where it could also respond to token requests containing client-nonces).
+      This is not recommended:
+      Not only is the fallout of a breach of the trusted environment far greater
+      (the attacker could issue tokens for any scope for the RS),
+      but the requirements on the execution environment are not less than to a trusted clock server:
+      It needs to be secure against tampering with local time --
+      otherwise, the AS could be kept suspended in the trusted environment
+      and would issue tokens for client-nonces created at an arbitrary later time.
+
+   4. Moving the Client.
+
+      Obtaining a client-nonce,
+      moving the client into a position to communicate with the AS,
+      and moving it back to the RS.
+      The RS likely needs to be aware of this,
+      or might already have expired the client-nonce once the token arrives.
+
+      This is likely to be too cumbersome for practical use.
 
 Adding client-nonce support to Client, RS and AS
 is a relatively mechanical task.
@@ -403,7 +422,7 @@ which must be taken on a case-by-case base.
 The demo largely sidesteps the issue of commissioning:
 devices are programmed already with the identities as they are known by the AS.
 This is a practical solution for a demo
-in which images are prepared and AS is operated independently.
+in which images are prepared and the AS is operated independently.
 
 While the ACE framework itself is not concerned with the setup of keys between the RS and the AS,
 [RFC8995 ("BRSKI")] and related documents describe how
@@ -427,7 +446,7 @@ the CoAP-over-GATT transport can be used to transport firmware data.
 [SUIT architecture (RFC9019)]: https://www.rfc-editor.org/rfc/rfc9019.html
 
 
-### C-AS communication
+### Client-AS communication
 
 The setup assembled for this PoC realizes the communication between Client and AS through HTTP.
 This is, in the context of the ACE OSCORE profile, an exotic step --
@@ -440,7 +459,7 @@ Consequently, if the Client-AS communication were conducted using CoAP-over-WebS
 the browser session's credentials (typically cookies)
 would only be sent to the WebSocket server if the application and the AS were hosted on the same Origin.
 
-Using an HTTP transport is suitable for the PoC itself,
+Using HTTP as a transport between Client and AS is suitable for the PoC itself,
 but is also expected to be viable for practical deployments.
 In that case, the AS would interact with an existing authentication server (Single-Sign-On mechanisms such as OpenID)
 at log-in time.
@@ -471,7 +490,7 @@ Viable alternatives to this setup are:
 * If the mobile application is realized as an app rather than as a web app,
   communication with the AS can use CoAP directly
   (or CoAP-over-WebSockets, in case excessive firewalling needs to be accounted for).
-  That communication may then be secured with TLS,
+  That communication may then be secured with TLS (eg. using client certificates),
   or with a token for accessing the AS as an RS (see above).
 
 * CoAP-over-WebSockets could be used from the browser
@@ -493,21 +512,23 @@ Adding proximity as an authenticated claim involves both a technical and an auth
 The technical aspect of proximity (or ranging) may be covered by Bluetooth, NFC and UWB (eg. Secure Ranging of IEEE 802.15.4z).
 Attacks are known against the former two in earlier versions
 (which admittedly also did not make serious claims to that effect).
-Bluetooth and UWB bases approaches offer directionality indication in addition to proximity in some implementations;
+Bluetooth and UWB based approaches offer directionality indication in addition to proximity in some implementations;
 these can offer practical benefits in addition to the security afforded by the proximity proofs.
-Implementations may support a mixture of these technologies;
-the Car Connectivity Consoritum's [white paper] outlines how all three are combined.
+Implementations may support a mixture of these technologies
+(as illustrated for example in the Car Connectivity Consoritum's [white paper]).
 
 [white paper]: https://carconnectivity.org/press-release/car-connectivity-consortium-publishes-white-paper-on-the-future-of-vehicle-access-with-digital-key/
 
-Independently of which technology turns out most practical,
+Independently of which technology turns out to be most practical,
 proximity will need to be integrated in ACE.
-If requiring proximity only once for interactions stretched over a certain time,
+When requiring proximity only once for interactions stretched over a certain time,
 it can suffice to verify proximity when the token is exchanged.
 With the AS being the authority on whether proximity is needed in an operation,
 that requirement needs to be expressed toward the Client and the RS together with the token.
 Any future specification defining this indication
 may also provide concrete guidance on how to combine key material at different layers.
+This is likely necessary: mere proof of *some* other party being in both peers' vicinities 
+does not rule out interception.
 <!-- STS takes AES keys which might be a by-product of token exchange so we can range later, cf https://rfmw.em.keysight.com/wireless/helpfiles/n7610/Content/Main/Concept%20802.15.4%20UWB.htm and https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7571033/pdf/sensors-20-05422.pdf but not sure whether that's not part of their negotiations anyway -->
 
 Note that, to the author's knowledge,
@@ -517,11 +538,24 @@ misleads them to assume their proximity.
 They do not protect against circumvention of a token's proximity requirement
 if either party is controlled by the attacker.
 (For example, an attacker obtaining full control of a digital key
-might still use it to open the corresponding lock with directional radio).
+might still use it to open the corresponding lock at distance with directional radio).
 Addressing such scenarios might be possible
 with an even higher degree of involvement of the AS
-(eg. denoting the maximum required processing time of a peer together with the token),
-but the effort to explore that avenue would only be warranted when backed by a threat model that requires the pertinent assurances.
+(eg. denoting the maximum required processing time of a peer together with the token).
+However, the effort to explore that avenue would only be warranted when backed by a threat model that requires the pertinent assurances.
+
+### Asymmetric cryptography
+
+The work-in-progress EDHOC specification (combined with its corresponding ACE profile)
+can improve security in some places:
+It ensures that captured communication can not be decrypted
+even if a party's key material is leaked
+(note that in the ACE OSCORE case implemented here,
+the key material is present on all three involved parties).
+
+As EDHOC is well integrated in the ACE framework,
+the relevant components can easily be added at a later time
+when the security requirements exceed what the ACE OSCORE profile can provide.
 
 ### Maturities
 
@@ -532,8 +566,11 @@ Components of the PoC come in different levels of maturity:
 * Aiming for long-term use:
   Resource Server (the ACE part of the device, managing the AS security association and the tokens) and OSCORE integration.
 
-  While currently not suitable for production deployments,
+  While currently not suitable for production deployments
+  (also for lack of review),
   these were built and documented with portability and development into production ready components in mind.
+  It is expected that they can be adopted into a production workflow
+  with relatively minor adjustments to existing code.
 
 * Evolvable towards long-term use:
   CoAP-over-GATT implementations (on device and browser).
@@ -577,7 +614,7 @@ is ultimately best decided when concrete application and deployment requirements
 
 ### Non-issues
 
-The original planning for this project included caveats for two aspects that turned out to be resolved easily:
+The original planning for this project included caveats for three aspects that turned out to be resolved easily:
 
 * AS discovery:
   The AS responsible for the RS can be discovered easily by the Client
@@ -620,8 +657,10 @@ either performed by the presenter or given as hands-on demo for the participants
 with at least two phones, and any number of nRF52-DK devices with distinct firmware images[^limits]:
 
 * Turn on the battery powered devices.
-* Direct the phones to <https://oscore.gitlab.io/coap-ace-poc-webapp/> with a Chrome based browser,
-  and scan for CoAP devices.
+* Direct the phones to <https://oscore.gitlab.io/coap-ace-poc-webapp/> with a Chrome based browser.
+
+  The web page can also be installed to the start screen as an app.
+* Scan for CoAP devices.
   Pick one with a label near you.
 * The device shows up in the device list.
   Attempt to read its temperature --
@@ -654,5 +693,10 @@ with at least two phones, and any number of nRF52-DK devices with distinct firmw
   and will see an updated token in their list of tokens.
 
 [^limits]: Only a configured number, defaulting to 4, of cell phones can be connected to a device at any given time.
-  That's plenty for real world use cases,
-  but during the demo, there should be enough boards over participants that no board gets more than 4 simultaneous users.
+           That's plenty for real world use cases,
+           but during the demo, there should be enough boards over participants that no board gets more than 4 simultaneous users.
+
+
+----
+
+Christian Amsüss, 2022-12-05
