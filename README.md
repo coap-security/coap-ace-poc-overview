@@ -136,8 +136,6 @@ Its conceptual components are:
 * Optionally, a pool of recently issued tokens
   to facilitate more efficient token re-validation or upgrades.
 
-  That pool is not depicted in the figure.
-
 ### Mobile application
 
 The mobile application takes the Client role in ACE,
