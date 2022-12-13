@@ -49,6 +49,17 @@ of which the Proof-of-Concept implements a concrete simple example.*
 
 ![Stack and communication diagram](./architecture-plain.svg)
 
+> *Legend*:
+> * Dark gray areas indicate persistent information storage in participants.
+>   Light gray areas indicate information stored ephemerally.
+> * Large arrows indicate communication steps in their sequence.
+>   Icons next to them illustrate the exchanged information during that step.
+>   When the arrows end in an information storage, that storage gets filled by that message.
+> * Thin gray lines show the path through the network stack a communication step takes.
+> * Yellow areas indicate key material.
+> * Light yellow areas indicate encrypted layers or information;
+>   the encryption key used with them is indicated to their left, and not part of the message.
+
 ### Resource Server (Device)
 
 The role of the Resource Server (RS) is implemented on any device that provides functionality accessed through a network.
@@ -62,6 +73,8 @@ The device houses several loosely coupled components:
 * A CoAP application:
   mapping the domain application to CoAP resources, possibly using standardized interfaces.
   This mapping also expresses the minimum properties (typically a "scope") a client needs to provide credentials for for any operation.
+
+  In the figure, the domain and CoAP application are not depicted separately.
 * A CoAP stack:
   mapping request coming through the network through the security layer to application requests.
   For easy local communication with user devices,
@@ -122,6 +135,8 @@ Its conceptual components are:
   (See [Client-AS communication] for further discussion).
 * Optionally, a pool of recently issued tokens
   to facilitate more efficient token re-validation or upgrades.
+
+  That pool is not depicted in the figure.
 
 ### Mobile application
 
