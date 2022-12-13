@@ -613,6 +613,9 @@ the [ferrocene] project.
 The Resource Server does not currently use that subset,
 but to the best of the author's knowledge contains no design decisions that would rule out refactoring into that subset on the long run.
 
+According to the ferrocene roadmap,
+ISO 26262/IEC 61508 qualification of that subset should be available by 2023 Q2.
+
 [ferrocene]: https://ferrous-systems.com/ferrocene/
 
 #### Various implementation caveats
