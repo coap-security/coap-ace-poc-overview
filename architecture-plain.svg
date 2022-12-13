@@ -14,102 +14,6 @@
      id="defs2">
     <marker
        style="overflow:visible"
-       id="TriangleStart"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       markerWidth="5.3244081"
-       markerHeight="6.155385"
-       viewBox="0 0 5.3244081 6.1553851"
-       preserveAspectRatio="xMidYMid">
-      <path
-         transform="scale(0.5)"
-         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
-         d="M 5.77,0 -2.88,5 V -5 Z"
-         id="path135" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="TriangleStart-5"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       markerWidth="5.3244081"
-       markerHeight="6.155385"
-       viewBox="0 0 5.3244081 6.1553851"
-       preserveAspectRatio="xMidYMid">
-      <path
-         transform="scale(0.5)"
-         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
-         d="M 5.77,0 -2.88,5 V -5 Z"
-         id="path135-6" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="TriangleStart-5-0"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       markerWidth="5.3244081"
-       markerHeight="6.155385"
-       viewBox="0 0 5.3244081 6.1553851"
-       preserveAspectRatio="xMidYMid">
-      <path
-         transform="scale(0.5)"
-         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
-         d="M 5.77,0 -2.88,5 V -5 Z"
-         id="path135-6-6" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="TriangleStart-5-0-0"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       markerWidth="5.3244081"
-       markerHeight="6.155385"
-       viewBox="0 0 5.3244081 6.1553851"
-       preserveAspectRatio="xMidYMid">
-      <path
-         transform="scale(0.5)"
-         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
-         d="M 5.77,0 -2.88,5 V -5 Z"
-         id="path135-6-6-2" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="TriangleStart-9"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       markerWidth="5.3244081"
-       markerHeight="6.155385"
-       viewBox="0 0 5.3244081 6.1553851"
-       preserveAspectRatio="xMidYMid">
-      <path
-         transform="scale(0.5)"
-         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
-         d="M 5.77,0 -2.88,5 V -5 Z"
-         id="path135-2" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="TriangleStart-9-6"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       markerWidth="5.3244081"
-       markerHeight="6.155385"
-       viewBox="0 0 5.3244081 6.1553851"
-       preserveAspectRatio="xMidYMid">
-      <path
-         transform="scale(0.5)"
-         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
-         d="M 5.77,0 -2.88,5 V -5 Z"
-         id="path135-2-1" />
-    </marker>
-    <marker
-       style="overflow:visible"
        id="Dot-9-1-7-5-6"
        refX="0"
        refY="0"
@@ -219,22 +123,6 @@
          style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
          d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
          id="Dot1" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="TriangleStart-5-0-0-9"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       markerWidth="5.3244081"
-       markerHeight="6.155385"
-       viewBox="0 0 5.3244081 6.1553851"
-       preserveAspectRatio="xMidYMid">
-      <path
-         transform="scale(0.5)"
-         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
-         d="M 5.77,0 -2.88,5 V -5 Z"
-         id="path135-6-6-2-1" />
     </marker>
   </defs>
   <g
@@ -1303,14 +1191,48 @@
          x="68.441795"
          y="178.59375"
          id="tspan7990-3">2: Explore</tspan></text>
-    <path
-       style="color:#000000;overflow:visible;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-dasharray:none;marker-end:url(#TriangleStart)"
-       d="m 182.66667,191.82292 h -45.08641 l -2.96455,5.02201"
-       id="path1178" />
-    <path
-       style="color:#000000;overflow:visible;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.750001;stroke-linecap:round;stroke-dasharray:none;marker-end:url(#TriangleStart)"
-       d="M 59.53125,181.23958 H 179.99343"
-       id="path2586" />
+    <g
+       id="path1178">
+      <path
+         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round"
+         d="m 137.36523,191.44727 -3.07226,5.20703 a 0.375,0.375 0 0 0 0.13281,0.51367 0.375,0.375 0 0 0 0.51367,-0.13281 l 2.85547,-4.83789 h 44.8711 a 0.375,0.375 0 0 0 0.375,-0.375 0.375,0.375 0 0 0 -0.375,-0.375 z"
+         id="path811" />
+      <g
+         id="g801">
+        <g
+           id="path803">
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375pt"
+             d="m 133.51577,198.70825 0.0343,-3.74652 3.22932,1.90631 z"
+             id="path807" />
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd"
+             d="m 133.30469,194.52539 -0.043,4.61328 0.37695,-0.21289 3.64063,-2.05273 z m 0.49218,0.87305 2.48243,1.46484 -2.50977,1.41406 z"
+             id="path809" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="path2586">
+      <path
+         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round"
+         d="m 59.53125,180.86523 a 0.37500051,0.37500051 0 0 0 -0.375,0.375 0.37500051,0.37500051 0 0 0 0.375,0.375 h 120.46289 a 0.37500051,0.37500051 0 0 0 0.375,-0.375 0.37500051,0.37500051 0 0 0 -0.375,-0.375 z"
+         id="path769" />
+      <g
+         id="g759">
+        <g
+           id="path761">
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt"
+             d="m 182.15718,181.23958 -3.24375,1.875 v -3.75 z"
+             id="path765" />
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd"
+             d="m 178.66406,178.93164 v 4.61523 l 3.99219,-2.30664 -0.37305,-0.21679 z m 0.5,0.86523 2.49414,1.44141 -2.49414,1.44336 z"
+             id="path767" />
+        </g>
+      </g>
+    </g>
     <text
        xml:space="preserve"
        style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:start;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1321,10 +1243,27 @@
          x="68.958267"
          y="157.42708"
          id="tspan7990-3-97">6: Send token</tspan></text>
-    <path
-       style="color:#000000;overflow:visible;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.750001;stroke-linecap:round;stroke-dasharray:none;marker-end:url(#TriangleStart-9)"
-       d="m 59.61172,160.07291 134.69518,0"
-       id="path2586-3" />
+    <g
+       id="path2586-3">
+      <path
+         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round"
+         d="m 59.611328,159.69727 a 0.37500051,0.37500051 0 0 0 -0.375,0.375 0.37500051,0.37500051 0 0 0 0.375,0.375 H 194.30664 a 0.37500051,0.37500051 0 0 0 0.375,-0.375 0.37500051,0.37500051 0 0 0 -0.375,-0.375 z"
+         id="path741" />
+      <g
+         id="g731">
+        <g
+           id="path733">
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt"
+             d="m 196.47065,160.07291 -3.24375,1.875 v -3.75 z"
+             id="path737" />
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd"
+             d="m 192.97656,157.76367 v 4.61719 l 3.99414,-2.30859 -0.375,-0.21485 z m 0.5,0.86719 2.4961,1.44336 -2.4961,1.4414 z"
+             id="path739" />
+        </g>
+      </g>
+    </g>
     <text
        xml:space="preserve"
        style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:start;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1335,10 +1274,38 @@
          x="68.859482"
          y="146.84375"
          id="tspan7990-3-97-9">7: Encrypted requests</tspan></text>
-    <path
-       style="color:#000000;overflow:visible;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.750001;stroke-linecap:round;stroke-dasharray:none;marker-start:url(#TriangleStart);marker-end:url(#TriangleStart-9-6)"
-       d="m 61.9304,149.48958 118.1435,0"
-       id="path2586-3-3" />
+    <g
+       id="path2586-3-3">
+      <path
+         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round"
+         d="m 61.929687,149.11523 a 0.37500051,0.37500051 0 0 0 -0.375,0.375 0.37500051,0.37500051 0 0 0 0.375,0.375 H 180.07422 a 0.37500051,0.37500051 0 0 0 0.375,-0.375 0.37500051,0.37500051 0 0 0 -0.375,-0.375 z"
+         id="path727" />
+      <g
+         id="g709">
+        <g
+           id="path719">
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt"
+             d="m 182.23765,149.48958 -3.24375,1.875 v -3.75 z"
+             id="path723" />
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd"
+             d="m 178.74414,147.18164 v 4.61523 l 3.99219,-2.30664 -0.37305,-0.21679 z m 0.5,0.86523 2.49609,1.44141 -2.49609,1.44336 z"
+             id="path725" />
+        </g>
+        <g
+           id="path711">
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt"
+             d="m 60.850399,149.48958 3.243754,1.875 v -3.75 z"
+             id="path715" />
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd"
+             d="m 64.59375,147.18164 v 4.61523 l -3.994141,-2.30664 0.375,-0.21679 z m -0.5,0.86523 -2.496094,1.44141 2.496094,1.44336 z"
+             id="path717" />
+        </g>
+      </g>
+    </g>
     <text
        xml:space="preserve"
        style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:start;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1371,30 +1338,143 @@
          x="40.532417"
          y="109.97717"
          id="tspan7990-3-9-1-5">5: Token Response</tspan></text>
-    <path
-       style="color:#000000;overflow:visible;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.750001;stroke-linecap:round;stroke-dasharray:none;marker-end:url(#TriangleStart-5)"
-       d="M 182.36221,170.65625 H 61.900029"
-       id="path2586-1" />
-    <path
-       style="color:#000000;overflow:visible;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.750001;stroke-linecap:round;stroke-dasharray:none;marker-end:url(#TriangleStart-5-0)"
-       d="M 28.698172,99.65363 106.89833,55.903547"
-       id="path2586-1-2" />
-    <path
-       style="color:#000000;overflow:visible;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.750001;stroke-linecap:round;stroke-dasharray:none;marker-end:url(#TriangleStart-5-0-0)"
-       d="M 120.59106,61.08384 56.836544,96.576589"
-       id="path2586-1-2-3" />
-    <path
-       style="color:#000000;overflow:visible;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.750001;stroke-linecap:round;stroke-dasharray:none;marker-start:url(#TriangleStart);marker-end:url(#TriangleStart-5-0-0-9)"
-       d="M 267.85177,123.18368 V 56.904565"
-       id="path2586-1-2-3-7" />
-    <path
-       style="color:#000000;overflow:visible;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.750001;stroke-linecap:round;stroke-dasharray:none;marker-end:url(#TriangleStart)"
-       d="m 137.58026,191.82292 -8.715,1.23398"
-       id="path3323" />
-    <path
-       style="color:#000000;overflow:visible;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.750001;stroke-linecap:round;stroke-dasharray:none;marker-end:url(#TriangleStart)"
-       d="m 137.58026,191.82292 -11.35201,-3.45146"
-       id="path3343" />
+    <g
+       id="path2586-1">
+      <path
+         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round"
+         d="m 61.900391,170.28125 a 0.37500051,0.37500051 0 0 0 -0.375,0.375 0.37500051,0.37500051 0 0 0 0.375,0.375 H 182.36133 a 0.37500051,0.37500051 0 0 0 0.375,-0.375 0.37500051,0.37500051 0 0 0 -0.375,-0.375 z"
+         id="path755" />
+      <g
+         id="g745">
+        <g
+           id="path747">
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt"
+             d="m 59.736276,170.65625 3.243754,-1.875 v 3.75 z"
+             id="path751" />
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd"
+             d="m 63.230469,168.34766 -3.994141,2.30859 0.375,0.2168 3.619141,2.09179 z m -0.5,0.86718 v 2.88282 l -2.494141,-1.44141 z"
+             id="path753" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="path2586-1-2">
+      <path
+         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round"
+         d="m 106.71484,55.576172 -78.199215,43.75 a 0.37500051,0.37500051 0 0 0 -0.144531,0.509765 0.37500051,0.37500051 0 0 0 0.509765,0.144532 l 78.201171,-43.75 a 0.37500051,0.37500051 0 0 0 0.14453,-0.509766 0.37500051,0.37500051 0 0 0 -0.51172,-0.144531 z"
+         id="path691" />
+      <g
+         id="g681">
+        <g
+           id="path683">
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt"
+             d="m 108.78665,54.847102 -1.91538,3.220077 -1.83093,-3.272651 z"
+             id="path687" />
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd"
+             d="m 104.61133,54.539062 2.2539,4.027344 2.35743,-3.96289 -0.43164,-0.0059 z m 0.85937,0.511719 2.87891,0.04102 -1.4707,2.474609 z"
+             id="path689" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="path2586-1-2-3">
+      <path
+         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round"
+         d="M 120.4082,60.755859 56.654297,96.248047 a 0.37500051,0.37500051 0 0 0 -0.144531,0.511719 0.37500051,0.37500051 0 0 0 0.509765,0.144531 L 120.77344,61.412109 a 0.37500051,0.37500051 0 0 0 0.14453,-0.509765 0.37500051,0.37500051 0 0 0 -0.50977,-0.146485 z"
+         id="path705" />
+      <g
+         id="g695">
+        <g
+           id="path697">
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt"
+             d="m 54.946011,97.629067 1.922135,-3.216049 1.824053,3.276488 z"
+             id="path701" />
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd"
+             d="m 56.875,93.912109 -2.365234,3.958985 0.43164,0.0078 4.179688,0.06836 z m -0.01563,1 1.404297,2.519532 -2.88086,-0.04492 z"
+             id="path703" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="path2586-1-2-3-7">
+      <path
+         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round;-inkscape-stroke:none"
+         d="m 267.85156,56.529297 a 0.37500051,0.37500051 0 0 0 -0.375,0.375 v 66.279293 a 0.37500051,0.37500051 0 0 0 0.375,0.375 0.37500051,0.37500051 0 0 0 0.375,-0.375 V 56.904297 a 0.37500051,0.37500051 0 0 0 -0.375,-0.375 z"
+         id="path833" />
+      <g
+         id="g815">
+        <g
+           id="path825">
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt;-inkscape-stroke:none"
+             d="m 267.85177,54.740812 1.875,3.243754 h -3.75 z"
+             id="path829" />
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd;-inkscape-stroke:none"
+             d="m 267.85156,54.242187 -0.21679,0.373047 -2.0918,3.619141 h 4.61719 z m 0,0.998047 1.44141,2.494141 h -2.88281 z"
+             id="path831" />
+        </g>
+        <g
+           id="path817">
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt;-inkscape-stroke:none"
+             d="m 267.85177,124.26368 1.875,-3.24375 h -3.75 z"
+             id="path821" />
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd;-inkscape-stroke:none"
+             d="m 267.85156,124.51367 -0.21679,-0.375 -2.0918,-3.61914 h 4.61719 z m 0,-1 1.44141,-2.49414 h -2.88281 z"
+             id="path823" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="path3323">
+      <path
+         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round"
+         d="m 137.52734,191.45117 -8.71484,1.23438 a 0.37500051,0.37500051 0 0 0 -0.31836,0.42382 0.37500051,0.37500051 0 0 0 0.42383,0.31836 l 8.71484,-1.23437 a 0.37500051,0.37500051 0 0 0 0.31836,-0.42383 0.37500051,0.37500051 0 0 0 -0.42383,-0.31836 z"
+         id="path783" />
+      <g
+         id="g773">
+        <g
+           id="path775">
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt"
+             d="m 126.72288,193.36025 2.94885,-2.31125 0.52573,3.71297 z"
+             id="path779" />
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd"
+             d="m 129.85937,190.58398 -3.63085,2.84571 0.40039,0.16211 3.87695,1.56445 z m -0.375,0.92969 0.4043,2.85352 -2.67187,-1.07617 z"
+             id="path781" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="path3343">
+      <path
+         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round"
+         d="m 126.33789,188.01172 a 0.37500051,0.37500051 0 0 0 -0.46875,0.25 0.37500051,0.37500051 0 0 0 0.25,0.46875 l 11.35156,3.45117 a 0.37500051,0.37500051 0 0 0 0.46875,-0.25 0.37500051,0.37500051 0 0 0 -0.25,-0.4668 z"
+         id="path797" />
+      <g
+         id="g787">
+        <g
+           id="path789">
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt"
+             d="m 124.15807,187.74204 3.6489,-0.85034 -1.09084,3.58784 z"
+             id="path793" />
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd"
+             d="m 128.17187,186.55078 -4.49218,1.04688 0.29492,0.31445 2.85547,3.05469 z m -0.73046,0.68164 -0.83789,2.75977 -1.96875,-2.10352 z"
+             id="path795" />
+        </g>
+      </g>
+    </g>
     <g
        id="g349"
        transform="translate(40.244169,-47.065203)">
