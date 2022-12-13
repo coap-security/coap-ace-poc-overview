@@ -335,12 +335,12 @@
        xml:space="preserve"
        style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="97.210457"
-       y="12.319552"
+       y="8.6153889"
        id="text3487-2-1"><tspan
          id="tspan3485-6-8"
          style="fill:#000000;stroke:none;stroke-width:0.264583px"
          x="97.210457"
-         y="12.319552">Authorization Server (AS)</tspan></text>
+         y="8.6153889">Authorization Server (AS)</tspan></text>
     <rect
        style="color:#000000;overflow:visible;fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:0.479578;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect3579"
@@ -394,11 +394,11 @@
     <path
        id="path6653"
        style="color:#000000;overflow:visible;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="M 140.6527,39.388345 V 22.442407 M 112.91947,39.388345 V 22.442407 m 27.73323,16.94594 a 13.866617,5.2886143 0 0 1 -6.9333,4.580074 13.866617,5.2886143 0 0 1 -13.86662,0 13.866617,5.2886143 0 0 1 -6.93331,-4.580074 m 27.73323,-16.94594 a 13.866617,5.2886143 0 0 1 -13.86661,5.288614 13.866617,5.2886143 0 0 1 -13.86662,-5.288614 13.866617,5.2886143 0 0 1 13.86662,-5.288615 13.866617,5.2886143 0 0 1 13.86661,5.288615 z" />
+       d="M 140.6527,35.684176 V 18.738238 M 112.91947,35.684176 V 18.738238 m 27.73323,16.94594 a 13.866617,5.2886143 0 0 1 -6.9333,4.580074 13.866617,5.2886143 0 0 1 -13.86662,0 13.866617,5.2886143 0 0 1 -6.93331,-4.580074 m 27.73323,-16.94594 a 13.866617,5.2886143 0 0 1 -13.86661,5.288614 13.866617,5.2886143 0 0 1 -13.86662,-5.288614 13.866617,5.2886143 0 0 1 13.86662,-5.288615 13.866617,5.2886143 0 0 1 13.86661,5.288615 z" />
     <path
        id="path6653-2"
        style="color:#000000;overflow:visible;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499997;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 107.66376,37.562622 v -7.571914 m -12.394041,7.571914 v -7.571914 m 12.394041,7.571915 a 6.1970205,2.3630992 0 0 1 -3.0985,2.046504 6.1970205,2.3630992 0 0 1 -6.197031,0 6.1970205,2.3630992 0 0 1 -3.09851,-2.046504 m 12.394041,-7.571915 a 6.1970205,2.3630992 0 0 1 -6.19701,2.3631 6.1970205,2.3630992 0 0 1 -6.197031,-2.3631 6.1970205,2.3630992 0 0 1 6.197031,-2.363099 6.1970205,2.3630992 0 0 1 6.19701,2.363099 z" />
+       d="m 107.66376,33.858453 v -7.571914 m -12.394041,7.571914 v -7.571914 m 12.394041,7.571915 a 6.1970205,2.3630992 0 0 1 -3.0985,2.046504 6.1970205,2.3630992 0 0 1 -6.197031,0 6.1970205,2.3630992 0 0 1 -3.09851,-2.046504 m 12.394041,-7.571915 a 6.1970205,2.3630992 0 0 1 -6.19701,2.3631 6.1970205,2.3630992 0 0 1 -6.197031,-2.3631 6.1970205,2.3630992 0 0 1 6.197031,-2.363099 6.1970205,2.3630992 0 0 1 6.19701,2.363099 z" />
     <g
        id="g7811-1-1"
        transform="matrix(0.46759055,0,0,0.49223521,246.95697,162.84837)"
@@ -413,7 +413,8 @@
          d="m 21.642358,17.482167 c 2.74e-4,3.710874 -7.71e-4,7.42239 0,11.133171 -1.595779,0.675508 -2.595904,2.715066 -1.706873,4.310331 0.908836,1.872212 3.903951,2.200234 5.067908,0.408244 1.187732,-1.493513 0.477043,-4.105683 -1.413351,-4.605404 -0.06471,-3.736786 -0.0064,-7.49762 -0.02119,-11.246342 z" />
     </g>
     <g
-       id="g7067">
+       id="g7067"
+       transform="translate(0,-3.7041668)">
       <rect
          style="color:#000000;overflow:visible;fill:#94b1c5;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
          id="rect4406"
@@ -469,7 +470,7 @@
      style="display:inline">
     <g
        id="g10465"
-       transform="translate(-5.1742219,9.0348285)">
+       transform="translate(-5.1742219,5.3306616)">
       <rect
          style="color:#000000;overflow:visible;fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="rect6861"
@@ -616,7 +617,7 @@
     </g>
     <g
        id="g8872"
-       transform="translate(73.818462,-2.4777371)">
+       transform="translate(73.818462,-6.181904)">
       <rect
          style="color:#000000;overflow:visible;fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="rect6861-6"
@@ -722,7 +723,7 @@
     </g>
     <g
        id="g8872-1"
-       transform="translate(-0.13244251,-2.4777371)"
+       transform="translate(-0.13244251,-6.181904)"
        style="display:inline">
       <rect
          style="color:#000000;overflow:visible;fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -853,7 +854,7 @@
     </g>
     <g
        id="g8872-1-2-5"
-       transform="translate(-98.355593,75.811483)"
+       transform="translate(-125.60766,81.118299)"
        style="display:inline">
       <rect
          style="color:#000000;overflow:visible;fill:#e6e6e6;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -927,6 +928,94 @@
            style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
            x="168.45274"
            y="53.743164">Available tokens</tspan></text>
+    </g>
+    <g
+       id="g8872-1-2-5-2"
+       transform="translate(-15.023835,32.478943)"
+       style="display:inline">
+      <rect
+         style="color:#000000;overflow:visible;fill:#e6e6e6;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect6861-6-1-2-5-7"
+         width="96.433578"
+         height="15.688641"
+         x="144.68507"
+         y="18.400486"
+         ry="5.5202632"
+         rx="5.5202627" />
+      <g
+         id="g7811-3-5-8-4-0"
+         transform="translate(132.14245,10.454232)"
+         style="display:inline">
+        <rect
+           style="color:#000000;overflow:visible;fill:#ffff00;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect6861-2-20-9-9-7-9"
+           width="57.446465"
+           height="10.394548"
+           x="15.604061"
+           y="10.889738"
+           ry="3.6697369"
+           rx="3.6697369" />
+        <path
+           id="rect6861-2-20-9-9-7-9-5"
+           style="color:#000000;display:inline;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           d="m 19.273577,10.889894 c -2.033033,0 -3.669544,1.636511 -3.669544,3.669543 v 3.055111 c 0,2.033032 1.636511,3.669544 3.669544,3.669544 H 54.584082 V 10.889894 Z" />
+        <text
+           xml:space="preserve"
+           style="color:#000000;font-size:4.23333px;line-height:4.7625px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="63.688255"
+           y="17.651209"
+           id="text3487-2-1-2-6-7-73-6-3"><tspan
+             style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
+             x="63.688255"
+             y="17.651209"
+             id="tspan8849-6-6-5-6">K928717</tspan></text>
+        <text
+           xml:space="preserve"
+           style="color:#000000;font-size:4.23333px;line-height:4.7625px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;display:inline;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="44.641544"
+           y="15.242442"
+           id="text3487-2-1-2-6-7-73-6-3-9"><tspan
+             style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
+             x="44.641544"
+             y="15.242442"
+             id="tspan8849-6-6-5-6-2">Device</tspan><tspan
+             style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
+             x="44.641544"
+             y="20.004942"
+             id="tspan5310">One</tspan></text>
+        <text
+           xml:space="preserve"
+           style="color:#000000;font-size:4.23333px;line-height:4.7625px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;display:inline;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="24.877489"
+           y="15.242442"
+           id="text3487-2-1-2-6-7-73-6-3-2"><tspan
+             style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
+             x="24.877489"
+             y="15.242442"
+             id="tspan8849-6-6-5-6-8">Jacky</tspan><tspan
+             style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
+             x="24.877489"
+             y="20.004942"
+             id="tspan5312">Doe</tspan></text>
+        <path
+           style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:0.25;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:butt"
+           d="m 33.99872,10.889737 v 10.39455"
+           id="path7700" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="color:#000000;font-size:4.23333px;line-height:4.7625px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:end;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:end;display:inline;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="238.4359"
+         y="25.400255"
+         id="text3487-2-1-6-25-9"><tspan
+           id="tspan3485-6-8-3-4-2"
+           style="font-size:4.23333px;text-align:end;text-anchor:end;fill:#000000;stroke:none;stroke-width:0.264583px"
+           x="238.4359"
+           y="25.400255">Recently</tspan><tspan
+           style="font-size:4.23333px;text-align:end;text-anchor:end;fill:#000000;stroke:none;stroke-width:0.264583px"
+           x="238.4359"
+           y="30.162756"
+           id="tspan4829">created tokens</tspan></text>
     </g>
     <g
        id="g8872-1-2-5-7"
@@ -1071,7 +1160,7 @@
     </g>
     <g
        id="g3235-6"
-       transform="translate(-232.92098,-42.459504)"
+       transform="translate(-221.42622,2.433524)"
        style="display:inline">
       <rect
          style="color:#000000;display:inline;overflow:visible;fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -1127,31 +1216,31 @@
      style="display:inline">
     <path
        style="color:#000000;overflow:visible;fill:none;fill-rule:evenodd;stroke:#cccccc;stroke-width:0.25;stroke-linecap:round;stroke-dasharray:none;marker-start:url(#Dot-9-1-7-5)"
-       d="m 29.956423,63.304952 v 30.32376 h 9.295804"
+       d="M 29.956423,63.304952 V 99.449546 H 48.692838"
        id="path3380-6-4-4-7" />
     <path
        style="color:#000000;overflow:visible;fill:none;fill-rule:evenodd;stroke:#cccccc;stroke-width:0.25;stroke-linecap:round;stroke-dasharray:none;marker-start:url(#Dot-9-1-7-5-6)"
-       d="m 32.073091,63.304952 v 28.73626 h 33.163288"
+       d="m 32.073091,63.304952 v 34.557093 l 58.009064,0"
        id="path3380-6-4-4-7-6" />
     <path
        style="color:#000000;overflow:visible;fill:none;fill-rule:evenodd;stroke:#cccccc;stroke-width:0.25;stroke-linecap:round;stroke-dasharray:none;marker-start:url(#Dot-9)"
-       d="M 173.45111,89.633668 V 170.65625"
+       d="M 173.45111,86.458666 V 170.65623"
        id="path3380-6" />
     <path
        style="color:#000000;overflow:visible;fill:none;fill-rule:evenodd;stroke:#cccccc;stroke-width:0.25;stroke-linecap:round;stroke-dasharray:none;marker-start:url(#Dot-9-1)"
-       d="M 171.28516,89.633668 V 160.07292"
+       d="M 171.28516,86.458666 V 160.0729"
        id="path3380-6-4" />
     <path
        style="color:#000000;overflow:visible;fill:none;fill-rule:evenodd;stroke:#cccccc;stroke-width:0.25;stroke-linecap:round;stroke-dasharray:none;marker-start:url(#Dot-9-1-7)"
-       d="M 160.52155,99.504692 V 149.48958"
+       d="m 160.52155,96.32969 v 53.15987"
        id="path3380-6-4-4" />
     <path
        style="color:#000000;overflow:visible;fill:none;fill-rule:evenodd;stroke:#cccccc;stroke-width:0.25;stroke-linecap:round;stroke-dasharray:none;marker-start:url(#Dot-2)"
-       d="m 175.74871,118.30626 v 62.93332"
+       d="m 175.74871,115.13124 v 66.10832"
        id="path3380-0" />
     <path
        style="color:#000000;overflow:visible;fill:none;fill-rule:evenodd;stroke:#cccccc;stroke-width:0.25;stroke-linecap:round;stroke-dasharray:none;marker-start:url(#Dot)"
-       d="m 179.88845,129.2036 v 62.61932"
+       d="M 179.88845,126.02858 V 191.8229"
        id="path3380" />
   </g>
   <g
@@ -1194,42 +1283,42 @@
     <g
        id="path1178">
       <path
-         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round"
+         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round;-inkscape-stroke:none"
          d="m 137.36523,191.44727 -3.07226,5.20703 a 0.375,0.375 0 0 0 0.13281,0.51367 0.375,0.375 0 0 0 0.51367,-0.13281 l 2.85547,-4.83789 h 44.8711 a 0.375,0.375 0 0 0 0.375,-0.375 0.375,0.375 0 0 0 -0.375,-0.375 z"
-         id="path811" />
+         id="path10927" />
       <g
-         id="g801">
+         id="g10917">
         <g
-           id="path803">
+           id="path10919">
           <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375pt"
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375pt;-inkscape-stroke:none"
              d="m 133.51577,198.70825 0.0343,-3.74652 3.22932,1.90631 z"
-             id="path807" />
+             id="path10923" />
           <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd"
+             style="color:#000000;fill:#000000;fill-rule:evenodd;-inkscape-stroke:none"
              d="m 133.30469,194.52539 -0.043,4.61328 0.37695,-0.21289 3.64063,-2.05273 z m 0.49218,0.87305 2.48243,1.46484 -2.50977,1.41406 z"
-             id="path809" />
+             id="path10925" />
         </g>
       </g>
     </g>
     <g
        id="path2586">
       <path
-         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round"
+         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round;-inkscape-stroke:none"
          d="m 59.53125,180.86523 a 0.37500051,0.37500051 0 0 0 -0.375,0.375 0.37500051,0.37500051 0 0 0 0.375,0.375 h 120.46289 a 0.37500051,0.37500051 0 0 0 0.375,-0.375 0.37500051,0.37500051 0 0 0 -0.375,-0.375 z"
-         id="path769" />
+         id="path10885" />
       <g
-         id="g759">
+         id="g10875">
         <g
-           id="path761">
+           id="path10877">
           <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt"
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt;-inkscape-stroke:none"
              d="m 182.15718,181.23958 -3.24375,1.875 v -3.75 z"
-             id="path765" />
+             id="path10881" />
           <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd"
+             style="color:#000000;fill:#000000;fill-rule:evenodd;-inkscape-stroke:none"
              d="m 178.66406,178.93164 v 4.61523 l 3.99219,-2.30664 -0.37305,-0.21679 z m 0.5,0.86523 2.49414,1.44141 -2.49414,1.44336 z"
-             id="path767" />
+             id="path10883" />
         </g>
       </g>
     </g>
@@ -1246,21 +1335,21 @@
     <g
        id="path2586-3">
       <path
-         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round"
+         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round;-inkscape-stroke:none"
          d="m 59.611328,159.69727 a 0.37500051,0.37500051 0 0 0 -0.375,0.375 0.37500051,0.37500051 0 0 0 0.375,0.375 H 194.30664 a 0.37500051,0.37500051 0 0 0 0.375,-0.375 0.37500051,0.37500051 0 0 0 -0.375,-0.375 z"
-         id="path741" />
+         id="path10857" />
       <g
-         id="g731">
+         id="g10847">
         <g
-           id="path733">
+           id="path10849">
           <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt"
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt;-inkscape-stroke:none"
              d="m 196.47065,160.07291 -3.24375,1.875 v -3.75 z"
-             id="path737" />
+             id="path10853" />
           <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd"
+             style="color:#000000;fill:#000000;fill-rule:evenodd;-inkscape-stroke:none"
              d="m 192.97656,157.76367 v 4.61719 l 3.99414,-2.30859 -0.375,-0.21485 z m 0.5,0.86719 2.4961,1.44336 -2.4961,1.4414 z"
-             id="path739" />
+             id="path10855" />
         </g>
       </g>
     </g>
@@ -1277,32 +1366,33 @@
     <g
        id="path2586-3-3">
       <path
-         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round"
+         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round;-inkscape-stroke:none"
          d="m 61.929687,149.11523 a 0.37500051,0.37500051 0 0 0 -0.375,0.375 0.37500051,0.37500051 0 0 0 0.375,0.375 H 180.07422 a 0.37500051,0.37500051 0 0 0 0.375,-0.375 0.37500051,0.37500051 0 0 0 -0.375,-0.375 z"
-         id="path727" />
+         id="path10843" />
       <g
-         id="g709">
+         id="g10825">
         <g
-           id="path719">
+           id="path10835">
           <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt"
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt;-inkscape-stroke:none"
              d="m 182.23765,149.48958 -3.24375,1.875 v -3.75 z"
-             id="path723" />
+             id="path10839" />
           <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd"
+             style="color:#000000;fill:#000000;fill-rule:evenodd;-inkscape-stroke:none"
              d="m 178.74414,147.18164 v 4.61523 l 3.99219,-2.30664 -0.37305,-0.21679 z m 0.5,0.86523 2.49609,1.44141 -2.49609,1.44336 z"
-             id="path725" />
+             id="path10841" />
         </g>
         <g
-           id="path711">
+           id="path10827"
+           transform="matrix(-1,0,0,1,125.19336,0)">
           <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt"
-             d="m 60.850399,149.48958 3.243754,1.875 v -3.75 z"
-             id="path715" />
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt;-inkscape-stroke:none"
+             d="m 64.094153,149.48958 -3.243754,1.875 v -3.75 z"
+             id="path10831" />
           <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd"
-             d="m 64.59375,147.18164 v 4.61523 l -3.994141,-2.30664 0.375,-0.21679 z m -0.5,0.86523 -2.496094,1.44141 2.496094,1.44336 z"
-             id="path717" />
+             style="color:#000000;fill:#000000;fill-rule:evenodd;-inkscape-stroke:none"
+             d="m 60.599609,147.18164 v 4.61523 l 3.994141,-2.30664 -0.375,-0.21679 z m 0.5,0.86523 2.496094,1.44141 -2.496094,1.44336 z"
+             id="path10833" />
         </g>
       </g>
     </g>
@@ -1316,88 +1406,134 @@
          x="68.836914"
          y="168.01041"
          id="tspan7990-3-9">3: Name AS and requirements</tspan></text>
-    <text
-       xml:space="preserve"
-       style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="15.310655"
-       y="98.083153"
-       id="text3487-2-1-61-5-2-6"
-       transform="rotate(-30)"><tspan
-         style="text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
-         x="15.310654"
-         y="98.083153"
-         id="tspan7990-3-9-1">4: Token Request</tspan></text>
-    <text
-       xml:space="preserve"
-       style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="40.532417"
-       y="109.97717"
-       id="text3487-2-1-61-5-2-6-7"
-       transform="rotate(-30)"><tspan
-         style="text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
-         x="40.532417"
-         y="109.97717"
-         id="tspan7990-3-9-1-5">5: Token Response</tspan></text>
     <g
        id="path2586-1">
       <path
-         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round"
+         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round;-inkscape-stroke:none"
          d="m 61.900391,170.28125 a 0.37500051,0.37500051 0 0 0 -0.375,0.375 0.37500051,0.37500051 0 0 0 0.375,0.375 H 182.36133 a 0.37500051,0.37500051 0 0 0 0.375,-0.375 0.37500051,0.37500051 0 0 0 -0.375,-0.375 z"
-         id="path755" />
+         id="path10871" />
       <g
-         id="g745">
+         id="g10861">
         <g
-           id="path747">
+           id="path10863">
           <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt"
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt;-inkscape-stroke:none"
              d="m 59.736276,170.65625 3.243754,-1.875 v 3.75 z"
-             id="path751" />
+             id="path10867" />
           <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd"
+             style="color:#000000;fill:#000000;fill-rule:evenodd;-inkscape-stroke:none"
              d="m 63.230469,168.34766 -3.994141,2.30859 0.375,0.2168 3.619141,2.09179 z m -0.5,0.86718 v 2.88282 l -2.494141,-1.44141 z"
-             id="path753" />
+             id="path10869" />
+        </g>
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="6.7937603"
+       y="130.65013"
+       id="text3487-2-1-61-5-2-6-7-7"
+       transform="rotate(-41.435574)"><tspan
+         style="text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
+         x="6.7937593"
+         y="130.65013"
+         id="tspan7990-3-9-1-5-5">4: Token Request</tspan></text>
+    <g
+       id="path2586-1-2-3-3">
+      <path
+         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round;-inkscape-stroke:none"
+         d="M 130.48633,62.447266 68.939453,115.59961 a 0.37500051,0.37500051 0 0 0 -0.03906,0.5293 0.37500051,0.37500051 0 0 0 0.529296,0.0371 L 130.97656,63.013672 a 0.37500051,0.37500051 0 0 0 0.0391,-0.529297 0.37500051,0.37500051 0 0 0 -0.52929,-0.03711 z"
+         id="path10821" />
+      <g
+         id="g10811">
+        <g
+           id="path10813">
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt;-inkscape-stroke:none"
+             d="m 132.36979,61.316047 -1.22949,3.539197 -2.45101,-2.838152 z"
+             id="path10817" />
+          <path
+             style="color:#000000;fill:#000000;fill-rule:evenodd;-inkscape-stroke:none"
+             d="m 132.74805,60.990234 -0.42578,0.08008 -4.10547,0.783204 3.01757,3.492187 z m -0.75782,0.652344 -0.94336,2.720703 -1.88476,-2.18164 z"
+             id="path10819" />
         </g>
       </g>
     </g>
     <g
-       id="path2586-1-2">
+       id="g7811-3-5-8-4-0-2"
+       transform="rotate(-40.82698,168.68976,-44.175106)"
+       style="display:inline">
+      <rect
+         style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect6861-2-20-9-9-7-9-9"
+         width="39.822681"
+         height="10.394548"
+         x="15.604061"
+         y="10.889738"
+         ry="3.6697369"
+         rx="3.6697369" />
+      <text
+         xml:space="preserve"
+         style="color:#000000;font-size:4.23333px;line-height:4.7625px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;display:inline;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="44.641544"
+         y="15.242442"
+         id="text3487-2-1-2-6-7-73-6-3-9-4"><tspan
+           style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
+           x="44.641544"
+           y="15.242442"
+           id="tspan8849-6-6-5-6-2-7">Device</tspan><tspan
+           style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
+           x="44.641544"
+           y="20.004942"
+           id="tspan5310-8">One</tspan></text>
+      <text
+         xml:space="preserve"
+         style="color:#000000;font-size:4.23333px;line-height:4.7625px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;display:inline;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="24.877489"
+         y="15.242442"
+         id="text3487-2-1-2-6-7-73-6-3-2-4"><tspan
+           style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
+           x="24.877489"
+           y="15.242442"
+           id="tspan8849-6-6-5-6-8-5">Jacky</tspan><tspan
+           style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
+           x="24.877489"
+           y="20.004942"
+           id="tspan5312-0">Doe</tspan></text>
       <path
-         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round"
-         d="m 106.71484,55.576172 -78.199215,43.75 a 0.37500051,0.37500051 0 0 0 -0.144531,0.509765 0.37500051,0.37500051 0 0 0 0.509765,0.144532 l 78.201171,-43.75 a 0.37500051,0.37500051 0 0 0 0.14453,-0.509766 0.37500051,0.37500051 0 0 0 -0.51172,-0.144531 z"
-         id="path691" />
-      <g
-         id="g681">
-        <g
-           id="path683">
-          <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt"
-             d="m 108.78665,54.847102 -1.91538,3.220077 -1.83093,-3.272651 z"
-             id="path687" />
-          <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd"
-             d="m 104.61133,54.539062 2.2539,4.027344 2.35743,-3.96289 -0.43164,-0.0059 z m 0.85937,0.511719 2.87891,0.04102 -1.4707,2.474609 z"
-             id="path689" />
-        </g>
-      </g>
+         style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:0.25;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:butt"
+         d="m 33.99872,10.889737 v 10.39455"
+         id="path7700-3" />
     </g>
+    <text
+       xml:space="preserve"
+       style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-4.6202059"
+       y="105.07608"
+       id="text3487-2-1-61-5-2-6-7-7-3"
+       transform="rotate(-41.435574)"><tspan
+         style="text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
+         x="-4.6202054"
+         y="105.07608"
+         id="tspan7990-3-9-1-5-5-6">5: Token Response</tspan></text>
     <g
-       id="path2586-1-2-3">
+       id="path2586-1-2-3-3-1">
       <path
-         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round"
-         d="M 120.4082,60.755859 56.654297,96.248047 a 0.37500051,0.37500051 0 0 0 -0.144531,0.511719 0.37500051,0.37500051 0 0 0 0.509765,0.144531 L 120.77344,61.412109 a 0.37500051,0.37500051 0 0 0 0.14453,-0.509765 0.37500051,0.37500051 0 0 0 -0.50977,-0.146485 z"
-         id="path705" />
+         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round;-inkscape-stroke:none"
+         d="M 106.56055,48.976562 45.011719,102.12891 a 0.37500051,0.37500051 0 0 0 -0.03906,0.52929 0.37500051,0.37500051 0 0 0 0.529297,0.0391 L 107.05078,49.544922 a 0.37500051,0.37500051 0 0 0 0.0391,-0.529297 0.37500051,0.37500051 0 0 0 -0.52929,-0.03906 z"
+         id="path10807" />
       <g
-         id="g695">
+         id="g10797">
         <g
-           id="path697">
+           id="path10799">
           <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt"
-             d="m 54.946011,97.629067 1.922135,-3.216049 1.824053,3.276488 z"
-             id="path701" />
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt;-inkscape-stroke:none"
+             d="m 43.619407,103.82731 1.229499,-3.5392 2.451006,2.83816 z"
+             id="path10803" />
           <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd"
-             d="m 56.875,93.912109 -2.365234,3.958985 0.43164,0.0078 4.179688,0.06836 z m -0.01563,1 1.404297,2.519532 -2.88086,-0.04492 z"
-             id="path703" />
+             style="color:#000000;fill:#000000;fill-rule:evenodd;-inkscape-stroke:none"
+             d="m 44.755859,99.796875 -1.513672,4.357425 0.423829,-0.082 4.105468,-0.78125 z m 0.1875,0.982425 1.884766,2.18164 -2.830078,0.54101 z"
+             id="path10805" />
         </g>
       </g>
     </g>
@@ -1406,78 +1542,79 @@
       <path
          style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round;-inkscape-stroke:none"
          d="m 267.85156,56.529297 a 0.37500051,0.37500051 0 0 0 -0.375,0.375 v 66.279293 a 0.37500051,0.37500051 0 0 0 0.375,0.375 0.37500051,0.37500051 0 0 0 0.375,-0.375 V 56.904297 a 0.37500051,0.37500051 0 0 0 -0.375,-0.375 z"
-         id="path833" />
+         id="path10949" />
       <g
-         id="g815">
+         id="g10931">
         <g
-           id="path825">
+           id="path10941">
           <path
              style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt;-inkscape-stroke:none"
              d="m 267.85177,54.740812 1.875,3.243754 h -3.75 z"
-             id="path829" />
+             id="path10945" />
           <path
              style="color:#000000;fill:#000000;fill-rule:evenodd;-inkscape-stroke:none"
              d="m 267.85156,54.242187 -0.21679,0.373047 -2.0918,3.619141 h 4.61719 z m 0,0.998047 1.44141,2.494141 h -2.88281 z"
-             id="path831" />
+             id="path10947" />
         </g>
         <g
-           id="path817">
+           id="path10933"
+           transform="matrix(1,0,0,-1,0,245.0332)">
           <path
              style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt;-inkscape-stroke:none"
-             d="m 267.85177,124.26368 1.875,-3.24375 h -3.75 z"
-             id="path821" />
+             d="m 267.85177,121.01993 1.875,3.24375 h -3.75 z"
+             id="path10937" />
           <path
              style="color:#000000;fill:#000000;fill-rule:evenodd;-inkscape-stroke:none"
-             d="m 267.85156,124.51367 -0.21679,-0.375 -2.0918,-3.61914 h 4.61719 z m 0,-1 1.44141,-2.49414 h -2.88281 z"
-             id="path823" />
+             d="m 267.85156,120.51953 -0.21679,0.375 -2.0918,3.61914 h 4.61719 z m 0,1 1.44141,2.49414 h -2.88281 z"
+             id="path10939" />
         </g>
       </g>
     </g>
     <g
        id="path3323">
       <path
-         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round"
+         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round;-inkscape-stroke:none"
          d="m 137.52734,191.45117 -8.71484,1.23438 a 0.37500051,0.37500051 0 0 0 -0.31836,0.42382 0.37500051,0.37500051 0 0 0 0.42383,0.31836 l 8.71484,-1.23437 a 0.37500051,0.37500051 0 0 0 0.31836,-0.42383 0.37500051,0.37500051 0 0 0 -0.42383,-0.31836 z"
-         id="path783" />
+         id="path10913" />
       <g
-         id="g773">
+         id="g10903">
         <g
-           id="path775">
+           id="path10905">
           <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt"
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt;-inkscape-stroke:none"
              d="m 126.72288,193.36025 2.94885,-2.31125 0.52573,3.71297 z"
-             id="path779" />
+             id="path10909" />
           <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd"
+             style="color:#000000;fill:#000000;fill-rule:evenodd;-inkscape-stroke:none"
              d="m 129.85937,190.58398 -3.63085,2.84571 0.40039,0.16211 3.87695,1.56445 z m -0.375,0.92969 0.4043,2.85352 -2.67187,-1.07617 z"
-             id="path781" />
+             id="path10911" />
         </g>
       </g>
     </g>
     <g
        id="path3343">
       <path
-         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round"
+         style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round;-inkscape-stroke:none"
          d="m 126.33789,188.01172 a 0.37500051,0.37500051 0 0 0 -0.46875,0.25 0.37500051,0.37500051 0 0 0 0.25,0.46875 l 11.35156,3.45117 a 0.37500051,0.37500051 0 0 0 0.46875,-0.25 0.37500051,0.37500051 0 0 0 -0.25,-0.4668 z"
-         id="path797" />
+         id="path10899" />
       <g
-         id="g787">
+         id="g10889">
         <g
-           id="path789">
+           id="path10891">
           <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt"
+             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.375001pt;-inkscape-stroke:none"
              d="m 124.15807,187.74204 3.6489,-0.85034 -1.09084,3.58784 z"
-             id="path793" />
+             id="path10895" />
           <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd"
+             style="color:#000000;fill:#000000;fill-rule:evenodd;-inkscape-stroke:none"
              d="m 128.17187,186.55078 -4.49218,1.04688 0.29492,0.31445 2.85547,3.05469 z m -0.73046,0.68164 -0.83789,2.75977 -1.96875,-2.10352 z"
-             id="path795" />
+             id="path10897" />
         </g>
       </g>
     </g>
     <g
        id="g349"
-       transform="translate(40.244169,-47.065203)">
+       transform="translate(40.244169,-50.240205)">
       <rect
          style="color:#000000;overflow:visible;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
          id="rect8260-6-5-9-4"
@@ -1600,7 +1737,7 @@
     </g>
     <g
        id="g17277"
-       transform="rotate(-28.914244,168.30218,319.32496)">
+       transform="rotate(-40.644495,150.12356,264.51152)">
       <rect
          style="color:#000000;display:inline;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="rect6861-2-2-7"
