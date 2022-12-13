@@ -159,9 +159,10 @@ even in a prototyping project (see [Maturities]).
 
 The demo application for the nRF52-DK development kit
 is called [coap-ace-poc-firmware and hosted on GitLab],
-along with its documentation<!--@@@ -->.
+along with [its documentation].
 
 [coap-ace-poc-firmware and hosted on GitLab]: https://gitlab.com/oscore/coap-ace-poc-firmware
+[its documentation]: https://oscore.gitlab.io/coap-ace-poc-firmware/doc/coap_ace_poc_firmware/
 
 When built, the application produces a set of firmware images,
 which can be programmed onto the development kit by means of drag-and-drop.
@@ -234,7 +235,9 @@ Along with the server code, a list of preconfigured RSes and their keys is store
 The mobile application is run in a web browser;
 it is implemented in Rust using the [yew stack],
 and compiled into WebAssembly.
-Both its [source code] and the ready-to-use [built version] are hosted and documented<!-- @@@ --> on GitLab.
+Both its [source code] and the ready-to-use [built version] are hosted and [documented] on GitLab.
+
+[documented]: https://oscore.gitlab.io/coap-ace-poc-webapp/doc/coap_ace_poc_webapp/
 
 The application initially just has a button for scanning for new devices,
 and shows a selection of eligible devices.
