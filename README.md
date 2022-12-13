@@ -47,7 +47,7 @@ The demo application is executed across three major components:
 *This section describes roles and components of a generalized setup
 of which the Proof-of-Concept implements a concrete simple example.*
 
-<!-- @@@ high-level diagram, split down to components (who stores what) -->
+![Stack and communication diagram](./architecture.svg)
 
 ### Resource Server (Device)
 
@@ -91,8 +91,6 @@ The device houses several loosely coupled components:
   
 [OSCORE]: https://www.rfc-editor.org/rfc/rfc8613
 [ACE OSCORE Profile]: https://www.rfc-editor.org/rfc/rfc9203
-
-  <!-- @@@ stack diagram next to other components -->
 
 ### Authorization Server
 
