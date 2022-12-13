@@ -47,7 +47,7 @@ The demo application is executed across three major components:
 *This section describes roles and components of a generalized setup
 of which the Proof-of-Concept implements a concrete simple example.*
 
-![Stack and communication diagram](./architecture.svg)
+![Stack and communication diagram](./architecture-plain.svg)
 
 ### Resource Server (Device)
 
