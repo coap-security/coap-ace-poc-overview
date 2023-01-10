@@ -1,10 +1,5 @@
 # CoAP/ACE PoC: Project overview
 
-*Preview version.
-While the general statements in this document are accurate to the best of the author's knowledge,
-statements pertaining to the particulars of the demo implementation
-are subject to change until software development is complete.*
-
 The CoAP/ACE Proof-of-Concept project
 demonstrates the use of CoAP[^1], the IETF's standard application protocol for the Internet of Things,
 and ACE[^2], the corresponding authorization framework.
@@ -40,6 +35,8 @@ The demo application is executed across three major components:
 
   In the ACE framework, it implements the Client (C) role.
 
+## Table of Contents
+
 [[_TOC_]]
 
 ## Components
@@ -64,7 +61,7 @@ of which the Proof-of-Concept implements a concrete simple example.*
 
 The role of the Resource Server (RS) is implemented on any device that provides functionality accessed through a network.
 ACE is designed to allow this role to be played by highly constrained devices:
-with the concrete profile used here, there is no need even for asymmetric cryptography.
+with the concrete profile used here, there is not even a need for asymmetric cryptography.
 
 The device houses several loosely coupled components:
 
@@ -160,20 +157,23 @@ Its conceptual components are:
 
 Most components that were developed within this project are implemented in the Rust programming language.
 This allows easy sharing of code between the mobile application and the embedded device,
-eases experimentation[^exp].
+and eases experimentation[^exp].
 Its rigorous type system lends itself to building high quality implementations
 even in a prototyping project (see [Maturities]).
 
 [^exp]: Bluntly speaking, a careless change in a Rust program is just as likely to work as in any other language, but if it does break the application subtly, this is often detected at build time.
+[Maturities]: #maturities
 
 ### Resource Server (Device)
 
 The demo application for the nRF52-DK development kit
-is called [coap-ace-poc-firmware and hosted on GitLab],
-along with [its documentation].
+is called [coap-ace-poc-firmware and hosted on GitLab].
+Precise instructions for flashing are available in the project's README;
+[more detailed documentation] describes how to flash it manually,
+and explains its components.
 
 [coap-ace-poc-firmware and hosted on GitLab]: https://gitlab.com/oscore/coap-ace-poc-firmware
-[its documentation]: https://oscore.gitlab.io/coap-ace-poc-firmware/doc/coap_ace_poc_firmware/
+[more detailed documentation]: https://oscore.gitlab.io/coap-ace-poc-firmware/doc/coap_ace_poc_firmware/
 
 When built, the application produces a set of firmware images,
 which can be programmed onto the development kit by means of drag-and-drop.
@@ -204,16 +204,18 @@ For timekeeping,
 it relies on the demo client to provide a current time stamp rather than on a high precision long-running clock.
 See [Time vs. Client-Nonce] for more details.
 
+[Time vs. Client-Nonce]: #time-vs-client-nonce
+
 ### Authorization Server
 
 The Authorization Server is implemented as a small Python script,
 available as [coap-ace-poc-as on GitLab].
 Originally planned as an adaption of RISE's [ACE-Java server],
 that turned out to be overly complex for the few tasks that remained in the demo
-when it was realized that a CoAP transport out of the browser could not carry over HTTP cookie based authentication data
+when it was realized that a CoAP-over-WebSockets transport out of the browser could not carry over HTTP cookie based authentication data
 (see [Client-AS communication]).
 
-A running version of the AS is provided on <https://as.coap.amsuess.com/>.
+A running version of the AS is provided on `https://as.coap.amsuess.com/`.
 Note that neither the user nor the client application need to be aware of that precise URI:
 It is encoded in the RS's responses to unauthorized access.
 
@@ -221,8 +223,8 @@ The server provides only minimal functionality:
 
 * Offering a web front end for logging in as "junior" or "senior".
   As there is no real authentication performed in the demo,
-  login (and logout) is merely a matter of clicking a button,
-  which sets a cookie.
+  login is merely a matter of clicking a button,
+  which redirects back to the original application with an additional parameter set in the URI's fragment component.
 * Offering the `/token` end point of ACE,
   providing tokens for the OSCORE profile.
   
@@ -250,25 +252,52 @@ Both its [source code] and the ready-to-use [built version] are hosted and [docu
 
 [documented]: https://oscore.gitlab.io/coap-ace-poc-webapp/doc/coap_ace_poc_webapp/
 
-The application initially just has a button for scanning for new devices,
+The application primarily shows a button for scanning for new devices,
 and shows a selection of eligible devices.
 This part of the user experience is shaped by the browser:
 It enforces that scanning only starts after a user interaction such as clicking a button,
 and the list is presented by the browser itself.
+
+The AS responsible for the device is discovered after the device is added.
+If the user has not established a login with that AS so far,
+a link for logging in is offered.
+That link takes the user out of the application,
+and back once login is completed.
+Any established BLE connections are reset when returning from the login
+as a consequence of leaving the page.
+In the demo, logins are stored as part of the address,
+and can be removed through a button.
 
 With each available device, the user may start any of the interactions offered by the device.
 As all of them are limited to authorized users,
 these interactions initially fail,
 but provide the application with the address of the AS and a scope to request.
 
-In addition,
+To facilitate the demonstration of offline operation,
+devices can also be added manually by specifiying their AS URI and RS label (the "audience" field of the token).
+The input fields are pre-populated suitably,
+only the device number needs adjustment.
+Using this interface,
+a token can be obtained before even coming within BLE range of the device.
+Even after switching the client's network connectivity (WiFi and cellular) off,
+the token can be used with the corresponding device once scanned.
+
+Tokens (and their OSCORE security associations) are removed from devices when the device indicates that they are not usable any more
+(e.g. when a junior's token has expired 5 minutes after it was created).
+OSCORE security associations persist when a device is merely disconnected,
+allowing resumption of operations with minimal extra data.
+While the demo application tries to establish any missing parts on request,
+it does not eagerly (or proactively) try obtaining new components when a request fails.
+This is done to make the processes more visible and understandable for the user;
+a deployed application would likely retry and re-establish connectivity automatically.
+
+In addition to its domain and ACE functionality,
 the client also provides the device with a local time stamp;
 [Time vs. Client-Nonce] has more details.
 
 [yew stack]: https://yew.rs/
 [source code]: https://gitlab.com/oscore/coap-ace-poc-webapp/
 [built version]: https://oscore.gitlab.io/coap-ace-poc-webapp/
-
 
 ## Learnings & future development
 
@@ -280,7 +309,7 @@ The demo's discovery model is built on two assumptions:
   they use Bluetooth proximity to discover any device,
   pick one by name if multiple are around,
   and obtain proof of the device being one under the AS's control when a connection is established.
-* There is only one "application" around, and it is known by all involved what it is.
+* There is only one domain application around, and it is known by all involved what it is.
 
 Matching this with deployment realities will need further exploration,
 based on anticipated usage patterns.
@@ -289,7 +318,7 @@ while others may profit from further development on the ACE and CoAP-over-GATT s
 
 * Resource Discovery (as specified in [RFC6690]) helps with the discovery of entry points on a device.
   The RS would expose a dedicated discovery resource (`/.well-known/core`)
-  that lists entry points at a suitable granularity.for the application.
+  that lists entry points at a suitable granularity for the application.
 
   Authorization may be required already at the resource discovery step.
   Note that if resource discovery is access controlled,
@@ -360,6 +389,12 @@ We can classify:
    But the GPS time signal can be spoofed with reasonable effort,
    rendering it unsuitable for deployments with high security requirements.
 
+   Note that given the CoAP connectivity established between Client and RS,
+   the RS might act as a forward proxy for the client in its request for tokens.
+   As the Client is unauthenticated at that time,
+   the RS needs to be strict in its proxying,
+   and to know all URIs the client may need to reach the AS.
+
 4. Neither the RS nor the Client have network connectivity at the time of their connection,
    and the RS's network connectivity before then is insufficient to synchronize time with the AS.
 
@@ -396,7 +431,7 @@ We can classify:
       A suitable location for such a time server might be the communications uplink,
       as that has the best information available to schedule its requests for accurate time.
 
-   3. Distributing clock to the Client.
+   3. Implementing a trusted clock server in the Client.
 
       Advances in secure execution and trusted computing may enable a setup in which the Client also takes the role of a time server.
       This requires a secure environment that is secure against tampering with its local time.
@@ -410,7 +445,7 @@ We can classify:
       Not only is the fallout of a breach of the trusted environment far greater
       (the attacker could issue tokens for any scope for the RS),
       but the requirements on the execution environment are not less than to a trusted clock server:
-      It needs to be secure against tampering with local time --
+      It still needs to be secure against tampering with local time --
       otherwise, the AS could be kept suspended in the trusted environment
       and would issue tokens for client-nonces created at an arbitrary later time.
 
@@ -472,6 +507,8 @@ Consequently, if the Client-AS communication were conducted using CoAP-over-WebS
 (a typical means of transporting CoAP in a browser),
 the browser session's credentials (typically cookies)
 would only be sent to the WebSocket server if the application and the AS were hosted on the same Origin.
+Unlike for HTTP requests,
+the Authorization header can not be sent along when establishing WebSockets.
 
 Using HTTP as a transport between Client and AS is suitable for the PoC itself,
 but is also expected to be viable for practical deployments.
@@ -573,8 +610,6 @@ when the security requirements exceed what the ACE OSCORE profile can provide.
 
 ### Maturities
 
-*Note that this section in particular will need confirmation at completion of the software development.*
-
 Components of the PoC come in different levels of maturity:
 
 * Aiming for long-term use:
@@ -585,6 +620,11 @@ Components of the PoC come in different levels of maturity:
   these were built and documented with portability and development into production ready components in mind.
   It is expected that they can be adopted into a production workflow
   with relatively minor adjustments to existing code.
+
+  For both parts, interaction with used third party software is ongoing
+  (and might be for a while)
+  to ensure that duplication with them is reduced,
+  and that abstraction boundaries are placed at sensible places throughout the ecosystem.
 
 * Evolvable towards long-term use:
   CoAP-over-GATT implementations (on device and browser).
@@ -646,8 +686,7 @@ The original planning for this project included caveats for three aspects that t
   It turned out that the conversion between role and actions in the device application model
   could be performed in the AS easily.
 
-  The [AIF (RFC9237)] format used for scopes can be used in its REST-specific form (as used in the demo),
-  or replaced with an application specific form in case the former is insufficient.
+  The [AIF (RFC9237)] format used for scopes is used in its REST-specific form (as used in the demo).
 
 [AIF (RFC9237)]: https://www.rfc-editor.org/rfc/rfc9237.html
 
@@ -663,7 +702,7 @@ The original planning for this project included caveats for three aspects that t
 See [the firmware's README file](../coap-ace-poc-firmware/README.md)
 for a description of how to install the demo,
 and how to connect from the browser.
-<!-- @@@ move into flashing? --> It is recommended to attach name labels corresponding to the uploaded images to the boards.
+As described there, it is recommended to attach name labels corresponding to the uploaded images to the boards.
 
 Documentation on how to build and configure the individual components
 is provided with the respective components;
@@ -683,10 +722,11 @@ with at least two phones, and any number of nRF52-DK devices with distinct firmw
   Attempt to read its temperature --
   this will fail, but prompt you to log in to elevate your privileges.
 * Pick distinct roles for different phones connected to a device.
-  Read the temperature again:
-  This will report some value.
+  After login, reconnect to the device:
 
-  In parallel, a token will show on the tokens list.
+  An access token is obtained and shown (in abbreviated hex form),
+  and an OSCORE connection is established.
+* Attempt to read its temperature -- now, this will report some value.
 * Attempt to change the device's LED state.
   This will succeed only for users who picked "Senior" at the login dialog.
 * Turn off cell phone's uplink (WiFi and mobile data),
@@ -703,7 +743,7 @@ with at least two phones, and any number of nRF52-DK devices with distinct firmw
 
   Turning the devices off and back on will not change that
   (although it will require a re-scan and a reconnect to the device,
-  and a new token exchange when the action is performed).
+  and a new token exchange between phone and device when the action is performed).
 
 * Turn on the phone's uplink again.
   Juniors can now perform their operations again,
@@ -716,4 +756,4 @@ with at least two phones, and any number of nRF52-DK devices with distinct firmw
 
 ----
 
-Christian Amsüss, 2022-12-05
+Christian Amsüss, 2022-12-20
