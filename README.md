@@ -299,6 +299,11 @@ the client also provides the device with a local time stamp;
 [source code]: https://gitlab.com/oscore/coap-ace-poc-webapp/
 [built version]: https://oscore.gitlab.io/coap-ace-poc-webapp/
 
+### Testing
+
+The [companion document on tests](Tests.md)
+describes automated and manual tests the whole system passes.
+
 ## Learnings & future development
 
 ### Discovery and identification
