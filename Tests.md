@@ -32,6 +32,8 @@ their output merely needs to be inspected in case of failure
   and because neither demo is performance sensitive enough that it would be detrimental to the user experience.
 
 [coap-ace-poc-as]: https://gitlab.com/oscore/coap-ace-poc-as
+[coap-ace-poc-firmware]: https://gitlab.com/oscore/coap-ace-poc-firmware
+[coap-ace-poc-webapp]: https://gitlab.com/oscore/coap-ace-poc-webapp
 [ace-oscore-helpers]: https://gitlab.com/oscore/ace-oscore-helpers
 [coap-gatt-utils]: https://gitlab.com/oscore/coap-gatt-utils
 [liboscore]: https://gitlab.com/oscore/liboscore
@@ -43,6 +45,8 @@ their output merely needs to be inspected in case of failure
 This section describes a large test run,
 which covers all relevant parts of the combined proof-of-concept demo.
 Its steps are combined into a single sequence to avoid tedious repetition.
+Unless noted otherwise,
+test steps are performed using the same client as the previous step.
 
 The test is described to use two nRF52-DK devices
 (one of which being attached to a debugger)
