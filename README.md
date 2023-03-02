@@ -152,6 +152,122 @@ Its conceptual components are:
   This pool is populated ahead of time or on demand
   by requesting a token from the AS for a particular RS.
 
+### Security properties
+
+The protocols utilized in this setup provide a set of security properties
+when implemented correctly.
+All protocols (OSCORE, ACE, ACE-OSCORE) have undergone (largely extengsive) security review as part of their publication.
+
+#### Summary
+
+The security of the application communication does not depend
+on proximity or the security of the underlying network layers
+(thus, BLE can be used in "Just Works" mode).
+Application data is only exchanged over an encrypted, replay and integrity protected channel,
+which is established through the token provided by the AS.
+
+As part of establishing that channel,
+both parties are authenticated to the extent necessary:
+The client is assured of the RS's identity (represented as the pair of the AS address and the "audience" identifier),
+and the RS is assured that the client is some entity known to the AS that may exercise the privileges expressed in the "scope" of the token.
+
+### Terminology and boundaries
+
+When an "active attacker" is mentioned,
+it is assumed to have the widest possible wide range of capabilities on the radio side,
+but did not compromise any party (Client, AS or RS) or use implementation flaws or side channels.
+
+In this context, "communication metadata" refers to the network addresses of the commmunicating parties,
+the amount of data exchanged and the timing of these exchanges.
+Communication metadata also covers details such as the matching between requests and responses,
+value and presence of sequence numbers and connection identifiers.
+Revealing that information is often traded off against bandwidth efficiency;
+the choices here (primarily made in OSCORE) are influenced by the typical constraints of IoT devices.
+(For example, any padding is purely optional).
+
+Communication metadata can reveal which implementation of the involved protocols is used;
+that information is not considered sensitive in this context.
+
+If a Client or an RS is compromised and controlled by an attacker,
+the attacker gains the party's privileges until the attack is discovered and the party's privileges revoked at the AS.
+This also extends to traffic exchanged before the attack,
+provided that the token submission was recorded.
+If the key material in a Client is read,
+the attacker can impersonate any RS the client has a token with,
+even if the Client is otherwise not compromised.
+If the key material in an RS is read,
+the attacker can impersonate any Client toward the RS indefinitely.
+
+### Per-step details
+
+* Advertisements are unencrypted;
+  they reveal that the RS is present and available using the CoAP protocol.
+  An active attacker can suppress discovery (e.g. by selective jamming).
+
+* The exploration phase is unencrypted;
+  it reveals the client device's presence and use of the ACE-OSCORE profile,
+  the address of the AS, and the audience identifier used by the RS (which together identify the RS).
+
+  The use of the EDHOC protocol (see [Asymmetric cryptography])
+  would restrict that information to active attackers.
+
+  In the current implementation, it also reveals one action the client would take;
+  this is a shortcoming of the discovery discussed in [Discovery and identification].
+
+  An active attacker can make exploration fail.
+  If an active attacker alters information in this step,
+  no application connection will be established with *that* RS.
+  The attacker may present the details of another RS
+  (and subsequently redirect traffic to it).
+  In that case, the application connection *will* be established with that other device,
+  but the user is informed of the device's identity,
+  and the attacker gains no access to the encrypted application data.
+
+  In the concrete demo implementation,
+  an attacker including the URI of an AS under the attacker's control
+  will gain the ability to interact with the user through their web browser.
+  This is a deliberate feature of the demo,
+  allowing its components to be exchanged separately.
+  Production client software would only accept AS URIs with which there is a pre-existing security context.
+
+* Communication between Client and AS is out of scope for this discussion;
+  it is based on HTTPS and the chosen authentication methods.
+
+* Submission of the token from the Client to the RS
+  transfers the token,
+  revealing the continued use of the ACE-OSCORE profile and communication metadata.
+
+  The token itself is encrypted and integrity protected;
+  attempts to alter it will result in the rejection of the token.
+  Replay of the token will result in the creation of a new security context,
+  but successful exchanges through that security context require key material known only to the original parties.
+
+* Once OSCORE communication starts,
+  the Client is assured that its peer is the very RS known to the AS under the provided audience identifier.
+  The RS is assured that its peer is a Client known to the AS and granted the authorizations indicated in the token.
+
+  Application data is encrypted, replay and integrity protected;
+  the keys are exclusively known to the Cleint and the RS,
+  and to the AS (which is a trusted party in the first place).
+  A passive attacker can see communication metadata.
+  An active attacker can delay or interrupt communication,
+  but not alter application data.
+
+  A comprehensive survey of attacks is [being developed as "Attacks on CoAP"];
+  a state-of-the-art implementation of CoAP and OSCORE
+  defeats all but the Blocking Attack,
+  provided the application requirements are described and implemented correctly.
+  (For example, defeating the Request Delay Attack requires that the application describe precisely any affected resource's freshness requirements).
+
+[being developed as "Attacks on CoAP"]: https://datatracker.ietf.org/doc/draft-ietf-core-attacks-on-coap/
+
+None of these properties depend on the confidentiality of the Bluetooth transport between Client and RS.
+
+The properties do not depend on physical proximity,
+but do depend on the user / Client to verify which RS communication was intended with.
+Failing that, an attacker can mount a Relay Attack (as defined in "Attacks on CoAP")
+and send application communication to a device outside the expected Bluetooth range.
+Still, this is limited to devices under the control of an AS the Client is associated with.
 
 ## Implementation
 
