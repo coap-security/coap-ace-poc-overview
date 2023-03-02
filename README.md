@@ -171,7 +171,7 @@ both parties are authenticated to the extent necessary:
 The client is assured of the RS's identity (represented as the pair of the AS address and the "audience" identifier),
 and the RS is assured that the client is some entity known to the AS that may exercise the privileges expressed in the "scope" of the token.
 
-### Terminology and boundaries
+#### Terminology and boundaries
 
 When an "active attacker" is mentioned,
 it is assumed to have the widest possible wide range of capabilities on the radio side,
@@ -198,7 +198,7 @@ even if the Client is otherwise not compromised.
 If the key material in an RS is read,
 the attacker can impersonate any Client toward the RS indefinitely.
 
-### Per-step details
+#### Per-step details
 
 * Advertisements are unencrypted;
   they reveal that the RS is present and available using the CoAP protocol.
