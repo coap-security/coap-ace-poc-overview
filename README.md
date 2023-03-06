@@ -853,6 +853,9 @@ with at least two phones, and any number of nRF52-DK devices with distinct firmw
 * Turn off cell phone's uplink (WiFi and mobile data),
   and wait for five minutes.
 
+  Alternatively, use the "force offline mode" checkbox at the bottom of the page
+  to simulate being disconnected from the Internet.
+
   (In a presentation, this is a good slot to tell about what is going on behind the scenes).
 
 * Attempt to read the temperature again,
