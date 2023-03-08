@@ -27,8 +27,8 @@
      showgrid="false"
      inkscape:zoom="1.1893044"
      inkscape:cx="373.32747"
-     inkscape:cy="378.79285"
-     inkscape:current-layer="layer3"
+     inkscape:cy="380.4745"
+     inkscape:current-layer="layer6"
      showguides="false">
     <inkscape:grid
        type="xygrid"
@@ -72,7 +72,7 @@
          transform="scale(0.5)"
          style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
          d="M 5.77,0 -2.88,5 V -5 Z"
-         id="path1149" />
+         id="path1808" />
     </marker>
     <marker
        style="overflow:visible"
@@ -89,12 +89,12 @@
        preserveAspectRatio="xMidYMid">
       <g
          transform="rotate(180,0,0)"
-         id="g1193">
+         id="g1852">
         <path
            transform="scale(0.5)"
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
            d="M 5.77,0 -2.88,5 V -5 Z"
-           id="path1191" />
+           id="path1850" />
       </g>
     </marker>
     <marker
@@ -133,7 +133,7 @@
          transform="scale(0.5)"
          style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
          d="M 5.77,0 -2.88,5 V -5 Z"
-         id="path1152" />
+         id="path1811" />
     </marker>
     <marker
        style="overflow:visible"
@@ -171,7 +171,7 @@
          transform="scale(0.5)"
          style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
          d="M 5.77,0 -2.88,5 V -5 Z"
-         id="path1155" />
+         id="path1814" />
     </marker>
     <marker
        style="overflow:visible"
@@ -209,7 +209,7 @@
          transform="scale(0.5)"
          style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
          d="M 5.77,0 -2.88,5 V -5 Z"
-         id="path1158" />
+         id="path1817" />
     </marker>
     <marker
        style="overflow:visible"
@@ -248,7 +248,7 @@
          transform="scale(0.5)"
          style="fill:#cccccc;fill-rule:evenodd;stroke:#cccccc;stroke-width:1pt"
          d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
-         id="path1161"
+         id="path1820"
          sodipodi:nodetypes="sssss" />
     </marker>
     <marker
@@ -288,7 +288,7 @@
          transform="scale(0.5)"
          style="fill:#cccccc;fill-rule:evenodd;stroke:#cccccc;stroke-width:1pt"
          d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
-         id="path1164"
+         id="path1823"
          sodipodi:nodetypes="sssss" />
     </marker>
     <marker
@@ -328,7 +328,7 @@
          transform="scale(0.5)"
          style="fill:#cccccc;fill-rule:evenodd;stroke:#cccccc;stroke-width:1pt"
          d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
-         id="path1167"
+         id="path1826"
          sodipodi:nodetypes="sssss" />
     </marker>
     <marker
@@ -368,7 +368,7 @@
          transform="scale(0.5)"
          style="fill:#cccccc;fill-rule:evenodd;stroke:#cccccc;stroke-width:1pt"
          d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
-         id="path1170"
+         id="path1829"
          sodipodi:nodetypes="sssss" />
     </marker>
     <marker
@@ -408,7 +408,7 @@
          transform="scale(0.5)"
          style="fill:#cccccc;fill-rule:evenodd;stroke:#cccccc;stroke-width:1pt"
          d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
-         id="path1173"
+         id="path1832"
          sodipodi:nodetypes="sssss" />
     </marker>
     <marker
@@ -448,7 +448,7 @@
          transform="scale(0.5)"
          style="fill:#cccccc;fill-rule:evenodd;stroke:#cccccc;stroke-width:1pt"
          d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
-         id="path1176"
+         id="path1835"
          sodipodi:nodetypes="sssss" />
     </marker>
     <marker
@@ -488,7 +488,7 @@
          transform="scale(0.5)"
          style="fill:#cccccc;fill-rule:evenodd;stroke:#cccccc;stroke-width:1pt"
          d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
-         id="path1179"
+         id="path1838"
          sodipodi:nodetypes="sssss" />
     </marker>
     <marker
@@ -527,7 +527,7 @@
          transform="scale(0.5)"
          style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
          d="M 5.77,0 -2.88,5 V -5 Z"
-         id="path1182" />
+         id="path1841" />
     </marker>
     <marker
        style="overflow:visible"
@@ -565,7 +565,7 @@
          transform="scale(0.5)"
          style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
          d="M 5.77,0 -2.88,5 V -5 Z"
-         id="path1185" />
+         id="path1844" />
     </marker>
     <marker
        style="overflow:visible"
@@ -603,7 +603,7 @@
          transform="scale(0.5)"
          style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
          d="M 5.77,0 -2.88,5 V -5 Z"
-         id="path1188" />
+         id="path1847" />
     </marker>
   </defs>
   <g
@@ -810,7 +810,8 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="entities"
-     sodipodi:insensitive="true">
+     sodipodi:insensitive="true"
+     style="display:inline">
     <rect
        style="color:#000000;overflow:visible;fill:#4d4d4d;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect3483"
@@ -1836,8 +1837,7 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="communication"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <text
        xml:space="preserve"
        style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -2032,136 +2032,6 @@
        style="display:inline;color:#000000;overflow:visible;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.750001;stroke-linecap:round;stroke-dasharray:none;marker-end:url(#TriangleStart_Fnone_S-000000)"
        d="m 137.58026,191.82292 -11.35201,-3.45146"
        id="path3343" />
-    <g
-       id="g349"
-       transform="translate(40.244169,-50.240205)">
-      <rect
-         style="color:#000000;overflow:visible;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
-         id="rect8260-6-5-9-4"
-         width="45"
-         height="20"
-         x="93.076981"
-         y="138.20676" />
-      <rect
-         style="color:#000000;overflow:visible;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
-         id="rect8260"
-         width="60"
-         height="10"
-         x="93.076981"
-         y="178.16605" />
-      <rect
-         style="color:#000000;overflow:visible;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
-         id="rect8260-6"
-         width="45"
-         height="10"
-         x="93.076981"
-         y="168.16605" />
-      <rect
-         style="color:#000000;overflow:visible;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
-         id="rect8260-6-5"
-         width="45"
-         height="10"
-         x="93.076981"
-         y="158.16605" />
-      <rect
-         style="color:#000000;overflow:visible;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
-         id="rect8260-6-5-90"
-         width="45"
-         height="10"
-         x="93.076981"
-         y="128.20676" />
-      <rect
-         style="color:#000000;overflow:visible;fill:#ffff00;fill-opacity:0.25;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
-         id="rect8260-6-5-9"
-         width="30"
-         height="10"
-         x="93.076981"
-         y="148.16605" />
-      <rect
-         style="color:#000000;overflow:visible;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
-         id="rect8260-6-1"
-         width="15"
-         height="10"
-         x="138.08305"
-         y="168.16605" />
-      <text
-         xml:space="preserve"
-         style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="115.61085"
-         y="135.29237"
-         id="text3487-2-1-61-9"><tspan
-           sodipodi:role="line"
-           style="text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
-           x="115.61085"
-           y="135.29237"
-           id="tspan7990-5">ACE</tspan></text>
-      <text
-         xml:space="preserve"
-         style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="115.52901"
-         y="165.29237"
-         id="text3487-2-1-61-9-9"><tspan
-           sodipodi:role="line"
-           style="text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
-           x="115.52901"
-           y="165.29237"
-           id="tspan7990-5-7">CoAP</tspan></text>
-      <text
-         xml:space="preserve"
-         style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="108.11084"
-         y="155.29237"
-         id="text3487-2-1-61-9-9-4"><tspan
-           sodipodi:role="line"
-           style="text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
-           x="108.11084"
-           y="155.29237"
-           id="tspan7990-5-7-8">OSCORE</tspan></text>
-      <text
-         xml:space="preserve"
-         style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="145.53508"
-         y="175.25166"
-         id="text3487-2-1-61-9-9-63"><tspan
-           sodipodi:role="line"
-           style="text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
-           x="145.53508"
-           y="175.25166"
-           id="tspan7990-5-7-9">GAP</tspan></text>
-      <text
-         xml:space="preserve"
-         style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="115.52901"
-         y="145.44899"
-         id="text3487-2-1-61-9-9-6"><tspan
-           sodipodi:role="line"
-           style="text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
-           x="115.52901"
-           y="145.44899"
-           id="tspan7990-5-7-5">CBOR</tspan></text>
-      <text
-         xml:space="preserve"
-         style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="115.47256"
-         y="175.21095"
-         id="text3487-2-1-61-9-7"><tspan
-           sodipodi:role="line"
-           style="text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
-           x="115.47256"
-           y="175.21095"
-           id="tspan7990-5-6">GATT</tspan></text>
-      <text
-         xml:space="preserve"
-         style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="123.02053"
-         y="185.13759"
-         id="text3487-2-1-61-9-7-7"><tspan
-           sodipodi:role="line"
-           style="text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
-           x="123.02053"
-           y="185.13759"
-           id="tspan7990-5-6-3">Bluetooth LE</tspan></text>
-    </g>
     <g
        id="g17277"
        transform="rotate(-40.644495,150.12356,264.51152)">
@@ -2458,9 +2328,15 @@
            d="m 21.642358,17.482167 c 2.74e-4,3.710874 -7.71e-4,7.42239 0,11.133171 -1.595779,0.675508 -2.595904,2.715066 -1.706873,4.310331 0.908836,1.872212 3.903951,2.200234 5.067908,0.408244 1.187732,-1.493513 0.477043,-4.105683 -1.413351,-4.605404 -0.06471,-3.736786 -0.0064,-7.49762 -0.02119,-11.246342 z" />
       </g>
     </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="stacks">
     <g
        id="g12518"
-       transform="translate(-3.9798567,6.6717879)">
+       transform="translate(-3.9798567,6.6717878)"
+       style="display:inline">
       <rect
          style="color:#000000;overflow:visible;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
          id="rect8260-6-5-9-0"
@@ -2533,6 +2409,137 @@
            x="23.077179"
            y="85.408195"
            id="tspan7990-5-7-8-6-0">IP</tspan></text>
+    </g>
+    <g
+       id="g349"
+       transform="translate(40.24417,-50.240205)"
+       style="display:inline">
+      <rect
+         style="color:#000000;overflow:visible;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect8260-6-5-9-4"
+         width="45"
+         height="20"
+         x="93.076981"
+         y="138.20676" />
+      <rect
+         style="color:#000000;overflow:visible;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect8260"
+         width="60"
+         height="10"
+         x="93.076981"
+         y="178.16605" />
+      <rect
+         style="color:#000000;overflow:visible;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect8260-6"
+         width="45"
+         height="10"
+         x="93.076981"
+         y="168.16605" />
+      <rect
+         style="color:#000000;overflow:visible;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect8260-6-5"
+         width="45"
+         height="10"
+         x="93.076981"
+         y="158.16605" />
+      <rect
+         style="color:#000000;overflow:visible;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect8260-6-5-90"
+         width="45"
+         height="10"
+         x="93.076981"
+         y="128.20676" />
+      <rect
+         style="color:#000000;overflow:visible;fill:#ffff00;fill-opacity:0.25;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect8260-6-5-9"
+         width="30"
+         height="10"
+         x="93.076981"
+         y="148.16605" />
+      <rect
+         style="color:#000000;overflow:visible;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect8260-6-1"
+         width="15"
+         height="10"
+         x="138.08305"
+         y="168.16605" />
+      <text
+         xml:space="preserve"
+         style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="115.61085"
+         y="135.29237"
+         id="text3487-2-1-61-9"><tspan
+           sodipodi:role="line"
+           style="text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
+           x="115.61085"
+           y="135.29237"
+           id="tspan7990-5">ACE</tspan></text>
+      <text
+         xml:space="preserve"
+         style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="115.52901"
+         y="165.29237"
+         id="text3487-2-1-61-9-9"><tspan
+           sodipodi:role="line"
+           style="text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
+           x="115.52901"
+           y="165.29237"
+           id="tspan7990-5-7">CoAP</tspan></text>
+      <text
+         xml:space="preserve"
+         style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="108.11084"
+         y="155.29237"
+         id="text3487-2-1-61-9-9-4"><tspan
+           sodipodi:role="line"
+           style="text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
+           x="108.11084"
+           y="155.29237"
+           id="tspan7990-5-7-8">OSCORE</tspan></text>
+      <text
+         xml:space="preserve"
+         style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="145.53508"
+         y="175.25166"
+         id="text3487-2-1-61-9-9-63"><tspan
+           sodipodi:role="line"
+           style="text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
+           x="145.53508"
+           y="175.25166"
+           id="tspan7990-5-7-9">GAP</tspan></text>
+      <text
+         xml:space="preserve"
+         style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="115.52901"
+         y="145.44899"
+         id="text3487-2-1-61-9-9-6"><tspan
+           sodipodi:role="line"
+           style="text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
+           x="115.52901"
+           y="145.44899"
+           id="tspan7990-5-7-5">CBOR</tspan></text>
+      <text
+         xml:space="preserve"
+         style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="115.47256"
+         y="175.21095"
+         id="text3487-2-1-61-9-7"><tspan
+           sodipodi:role="line"
+           style="text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
+           x="115.47256"
+           y="175.21095"
+           id="tspan7990-5-6">GATT</tspan></text>
+      <text
+         xml:space="preserve"
+         style="color:#000000;font-size:5.64444px;line-height:6.35px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';text-align:center;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-anchor:middle;overflow:visible;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="123.02053"
+         y="185.13759"
+         id="text3487-2-1-61-9-7-7"><tspan
+           sodipodi:role="line"
+           style="text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.264583px"
+           x="123.02053"
+           y="185.13759"
+           id="tspan7990-5-6-3">Bluetooth LE</tspan></text>
     </g>
   </g>
 </svg>
