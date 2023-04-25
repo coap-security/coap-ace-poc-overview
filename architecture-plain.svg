@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+SPDX-FileCopyrightText: Copyright 2022 EDF (Électricité de France S.A.)
+SPDX-License-Identifier: BSD-3-Clause
+See README for all details on copyright, authorship and license.
+-->
+
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
@@ -9,7 +15,12 @@
    id="svg5"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+   <title
+     id="title506">Architecture overview of the CoAP/ACE PoC</title>
   <defs
      id="defs2">
     <marker
@@ -1948,4 +1959,25 @@
            id="tspan7990-5-7-8-6-0">IP</tspan></text>
     </g>
   </g>
+  <metadata
+     id="metadata504">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <cc:license
+           rdf:resource="./LICENSES/BSD-3-Clause.txt" />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Christian Amsüss</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Copyright: 2022 EDF (Électricité de France S.A.)</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:title>Architecture overview of the CoAP/ACE PoC</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
 </svg>
