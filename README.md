@@ -770,14 +770,14 @@ Components of the PoC come in different levels of maturity:
 #### Towards critical systems
 
 One aspect worth addressing in the context of production readiness is use in critical systems:
-Efforts are underway to define a subset of the Rust language
-for which a qualified tool chain is available --
-the [ferrocene] project.
-The Resource Server does not currently use that subset,
-but to the best of the author's knowledge contains no design decisions that would rule out refactoring into that subset on the long run.
+As of late 2023, there exists a Rust compiler qualified for ISO 26262 (ASIL D) and IEC 61508 (SIL 4)
+in the [ferrocene] project.
 
-According to the ferrocene roadmap,
-ISO 26262/IEC 61508 qualification of that subset should be available by 2023 Q2.
+If that ecosystem is to be used with the present firmware,
+it will not only require applying to the relevant standards to the code and dependencies,
+but also limiting the used features to the qualified subset of Rust (version 1.68 as of the latest update).
+The code so far uses a few newer idioms during setup,
+but the cryptographic core components work on that release.
 
 [ferrocene]: https://ferrous-systems.com/ferrocene/
 
