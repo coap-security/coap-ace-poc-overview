@@ -2,11 +2,11 @@
 SPDX-FileCopyrightText: Copyright 2022 EDF (Électricité de France S.A.)
 SPDX-License-Identifier: BSD-3-Clause
 -->
-# CoAP/ACE PoC: Project overview
+# CoAP/ACE-OAuth PoC: Project overview
 
-The CoAP/ACE Proof-of-Concept project
+The CoAP/ACE-OAuth Proof-of-Concept project
 demonstrates the use of CoAP[^1], the IETF's standard application protocol for the Internet of Things,
-and ACE[^2], the corresponding authorization framework.
+and ACE-OAuth[^2], the corresponding authorization framework.
 It transports CoAP over GATT[^3],
 allowing local access from off-the-shelf cell phones
 even when connectivity to the Internet is limited.
